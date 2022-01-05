@@ -1,0 +1,21 @@
+<?php 
+
+require_once('config.php');
+
+if(mysql_num_rows(mysql_query("select a.mlsno,b.MLSNo from tbl_listings b, tbl_mlsno_update a WHERE a.mlsno = b.MLSNo"))>50){
+
+mysql_query("UPDATE tbl_listings b, tbl_mlsno_update a SET b.active=1 WHERE a.mlsno = b.MLSNo");
+
+mysql_query("UPDATE tbl_listings SET tbl_listings.active=0 WHERE tbl_listings.MLSNo NOT IN (SELECT tbl_mlsno_update.mlsno FROM tbl_mlsno_update WHERE tbl_mlsno_update.mlsno IS NOT NULL)");
+
+mysql_query("DELETE FROM tbl_listings WHERE active=0");
+
+echo "MLSNo Update successfully1";
+
+}
+
+echo "MLSNo Update successfully2";
+
+exit;
+
+?>

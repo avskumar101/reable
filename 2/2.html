@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>185.53.1.82</title>
+<meta charset="utf-8">
+<meta name="description" content="Search Engine for the Internet of Things">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://wire.shodan.io/v2.4.0/default/css/wire.css" rel="stylesheet" />
+<link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="/static/img/apple-touch-icon-192.png">
+<link rel="search" href="/static/opensearch.xml" type="application/opensearchdescription+xml" title="Shodan">
+<script defer src="https://kit.fontawesome.com/b7e79643d9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/static/mapbox-gl-js/css/mapbox-gl.css" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@shodanhq" />
+<meta name="twitter:creator" content="@achillean" />
+<meta name="twitter:title" content="185.53.1.82" />
+<meta name="twitter:description" content="Ports open: 21, 22, 80, 443" />
+<meta name="twitter:image" content="https://www.shodan.io/host/185.53.1.82/image" />
+<style>#host-map {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#host-title {
+    background-image: none !important;
+    display: inline-block;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 80px 0 0 0;
+    padding: 0 10px;
+}
+
+.host-header-link {
+    padding: 0px 6px;
+    vertical-align: bottom;
+    font-size: 1.5rem;
+    margin-left: 12px;
+}
+
+#ports {
+    margin-top: 10px;
+}
+
+#ports a {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 1.3rem;
+    height: 48px;
+    letter-spacing: 1px;
+    line-height: 48px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 48px;
+}
+
+.banner-title span {
+    font-size: 1.4rem;
+}
+
+.screenshot {
+    width: 100%;
+    margin-top: 10px;
+}
+</style>
+<style>#host ul,
+#host pre {
+    margin-bottom: 0;
+}
+
+#http-components img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#http-components li {
+    display: inline-block;
+}
+
+#vulnerabilities th {
+    vertical-align: top;
+}
+
+#tags {
+    margin: -5px 0 10px;
+}
+
+#tags h6 {
+    display: inline;
+    vertical-align: middle;
+}
+
+.banner pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+:target {
+    animation: flash ease-in 0.5s 1
+}
+
+@keyframes flash {
+    0% {
+        background-color: Yellow;
+        opacity: 1;
+    }
+    100% {}
+}
+</style>
+</head>
+<body>
+<div class="quickbar">
+<ul>
+<li><a href="https://www.shodan.io">Shodan</a>
+</li>
+<li><a href="https://maps.shodan.io">Maps</a>
+</li>
+<li><a href="https://images.shodan.io">Images</a>
+</li>
+<li><a href="https://monitor.shodan.io">Monitor</a>
+</li>
+<li><a href="https://developer.shodan.io">Developer</a>
+</li>
+<li><a href="https://www.shodan.io/about/products">More...</a>
+</li>
+</ul>
+</div>
+<div class="container u-full-width">
+<div class="row">
+<div class="twelve columns">
+<div id="host-map"></div>
+<style>.searchbox {
+    font-family: Arial;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media (max-width: 900px) {
+    .right-menu .menu-item-account {
+        display: none
+    }
+}
+</style>
+<div class="navbar">
+<input id="menu-btn" type="checkbox" class="menu-btn" />
+<label for="menu-btn" class="menu-icon"><span class="navicon"><i class="fa fa-bars  fa-fw "></i></span>
+</label><a href="/" class="title"><img src="/static/img/logo.png" alt="Shodan" width="112" height="32" /></a>
+<ul class="menu sub-menu">
+<li><a href="/explore"><i class="fas fa-globe  fa-fw "></i>Explore</a>
+</li>
+<li><a href="https://account.shodan.io/billing" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase  fa-fw "></i>Pricing
+<i style="font-size: 1.1rem" class="fa fa-external-link  fa-fw "></i></a>
+</li>
+</ul>
+<form action="/search" method="GET">
+<div class="searchbox">
+<div class="input-wrapper">
+<label for="search-query" value="Enter search query" class="visually-hidden"></label>
+<input type="text" name="query" placeholder="Search..." autofocus="autofocus" autocapitalize="none" id="search-query" />
+</div>
+<button type="submit" aria-label="Submit search querxy" data-balloon-disable="data-balloon-disable" class="button-red"><i class="fas fa-search  fa-fw "></i>
+</button>
+</div>
+</form>
+<ul class="menu main-menu right-menu">
+<li><a href="/dashboard" class="highlight-success">Login</a>
+</li>
+</ul>
+</div>
+<script>(function() {
+    let $menuBtn = document.getElementById('menu-btn')
+    document.body.addEventListener('click', function(e) {
+        // Only check when the menu is open
+        if (!$menuBtn.checked) {
+            return
+        }
+
+        let elm = e.target
+        let showMenu = false
+        while (elm) {
+            // Ignore duplicated event
+            if (elm.classList.contains('menu-icon')) {
+                return
+            }
+
+            // Toggle menu when clicking on the menu icon
+            if (elm.id == 'menu-btn') {
+                showMenu = true
+                break
+            }
+            elm = elm.parentElement
+        }
+
+        $menuBtn.checked = showMenu
+    })
+})()
+</script>
+<div>
+<h2 id="host-title" class="bg-dark heading">185.53.1.82</h2><a href="/host/185.53.1.82" class="host-header-link bg-light inline-block"><i class="far fa-browser  fa-fw "></i> Regular View</a><a href="/host/185.53.1.82/raw" class="host-header-link bg-light inline-block"><i class="far fa-terminal  fa-fw "></i> Raw Data</a><a href="/host/185.53.1.82/history" class="host-header-link bg-light inline-block"><i class="far fa-history  fa-fw "></i> History</a>
+</div>
+</div>
+</div>
+</div>
+<div id="host" class="container u-full-width card-padding">
+<div class="row">
+<div class="twelve columns">
+<div class="u-pull-right">
+<h6 style="display: inline" class="grid-heading"><span>Last Update: 2021-12-28</span>
+</h6>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="six columns">
+<div class="card card-yellow card-padding"><a name="general"></a>
+<h1 id="general"><i class="far fa-globe  fa-fw "></i><em>General</em>Information
+</h1>
+<table class="table u-full-width">
+<tr>
+<td>Hostnames</td>
+<td><strong>mail.sportpertuttinet.it</strong>
+</td>
+</tr>
+<tr>
+<td>Domains</td>
+<td><a href="/domain/sportpertuttinet.it" class="button">sportpertuttinet.it</a>
+</td>
+</tr>
+<tr>
+<td>Country</td>
+<td><strong><a href="/search?query=country%3A%22IT%22" class="text-dark">Italy</a></strong>
+</td>
+</tr>
+<tr>
+<td>City</td>
+<td><strong><a href="/search?query=city%3A%22Rome%22" class="text-dark">Rome</a></strong>
+</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td><strong><a href="/search?query=org%3A%22IP+for+secure+connection%22" class="text-dark">IP for secure connection</a></strong>
+</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td><strong><a href="/search?query=isp%3A%22IRIDEOS+S.P.A.%22" class="text-dark">IRIDEOS S.P.A.</a></strong>
+</td>
+</tr>
+<tr>
+<td>ASN</td>
+<td><strong><a href="/search?query=asn%3A%22AS5396%22" class="text-dark">AS5396</a></strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="card card-padding card-purple"><a name="webtech"></a>
+<h1 id="webtech"><i class="far fa-browser  fa-fw "></i><em>Web</em>Technologies
+</h1>
+<ul id="http-components">
+<li><a href="/search?query=http.component%3A%22bootstrap%22" class="button"><img src="/static/img/http-components/Bootstrap.png" onerror="this.style.display='none'" width="16" height="16" />Bootstrap</a>
+</li>
+<li><a href="/search?query=http.component%3A%22bootstrap+table%22" class="button"><img src="/static/img/http-components/Bootstrap Table.png" onerror="this.style.display='none'" width="16" height="16" />Bootstrap Table</a>
+</li>
+<li><a href="/search?query=http.component%3A%22cdnjs%22" class="button"><img src="/static/img/http-components/cdnjs.png" onerror="this.style.display='none'" width="16" height="16" />cdnjs</a>
+</li>
+<li><a href="/search?query=http.component%3A%22jquery%22" class="button"><img src="/static/img/http-components/jQuery.png" onerror="this.style.display='none'" width="16" height="16" />jQuery</a>
+</li>
+<li><a href="/search?query=http.component%3A%22jquery+cdn%22" class="button"><img src="/static/img/http-components/jQuery CDN.png" onerror="this.style.display='none'" width="16" height="16" />jQuery CDN</a>
+</li>
+<li><a href="/search?query=http.component%3A%22moment.js%22" class="button"><img src="/static/img/http-components/Moment.js.png" onerror="this.style.display='none'" width="16" height="16" />Moment.js</a>
+</li>
+<li><a href="/search?query=http.component%3A%22recaptcha%22" class="button"><img src="/static/img/http-components/reCAPTCHA.png" onerror="this.style.display='none'" width="16" height="16" />reCAPTCHA</a>
+</li>
+</ul>
+</div>
+<div class="card card-red card-padding"><a name="vulns"></a>
+<h1 id="vulns"><i class="far fa-exclamation-triangle  fa-fw "></i><em>Vulnerabilities</em>
+</h1>
+<p class="normalize text-secondary">Note: the device may not be impacted by all of these issues. The vulnerabilities are implied based on the software and version.</p>
+<table id="vulnerabilities" class="table">
+<tbody>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-7679" class="text-dark">CVE-2017-7679</a>
+</th>
+<td>In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, mod_mime can read one byte past the end of a buffer when sending a malicious Content-Type response header.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-9798" class="text-dark">CVE-2017-9798</a>
+</th>
+<td>Apache httpd allows remote attackers to read secret data from process memory if the Limit directive can be set in a user&#39;s .htaccess file, or if httpd.conf has certain misconfigurations, aka Optionsbleed. This affects the Apache HTTP Server through 2.2.34 and 2.4.x through 2.4.27. The attacker sends an unauthenticated OPTIONS HTTP request when attempting to read secret data. This is a use-after-free issue and thus secret data is not always sent, and the specific data depends on many factors including configuration. Exploitation with .htaccess can be blocked with a patch to the ap_limit_section function in server/core.c.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2016-1546" class="text-dark">CVE-2016-1546</a>
+</th>
+<td>The Apache HTTP Server 2.4.17 and 2.4.18, when mod_http2 is enabled, does not limit the number of simultaneous stream workers for a single HTTP/2 connection, which allows remote attackers to cause a denial of service (stream-processing outage) via modified flow-control windows.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2018-1312" class="text-dark">CVE-2018-1312</a>
+</th>
+<td>In Apache httpd 2.2.0 to 2.4.29, when generating an HTTP Digest authentication challenge, the nonce sent to prevent reply attacks was not correctly generated using a pseudo-random seed. In a cluster of servers using a common Digest authentication configuration, HTTP requests could be replayed across servers by an attacker without detection.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2018-1333" class="text-dark">CVE-2018-1333</a>
+</th>
+<td>By specially crafting HTTP/2 requests, workers would be allocated 60 seconds longer than necessary, leading to worker exhaustion and a denial of service. Fixed in Apache HTTP Server 2.4.34 (Affected 2.4.18-2.4.30,2.4.33).</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2018-11763" class="text-dark">CVE-2018-11763</a>
+</th>
+<td>In Apache HTTP Server 2.4.17 to 2.4.34, by sending continuous, large SETTINGS frames a client can occupy a connection, server thread and CPU time without any connection timeout coming to effect. This affects only HTTP/2 connections. A possible mitigation is to not enable the h2 protocol.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2016-8612" class="text-dark">CVE-2016-8612</a>
+</th>
+<td>Apache HTTP Server mod_cluster before version httpd 2.4.23 is vulnerable to an Improper Input Validation in the protocol parsing logic in the load balancer resulting in a Segmentation Fault in the serving httpd process.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2019-0197" class="text-dark">CVE-2019-0197</a>
+</th>
+<td>A vulnerability was found in Apache HTTP Server 2.4.34 to 2.4.38. When HTTP/2 was enabled for a http: host or H2Upgrade was enabled for h2 on a https: host, an Upgrade request from http/1.1 to http/2 that was not the first request on a connection could lead to a misconfiguration and crash. Server that never enabled the h2 protocol or that only enabled it for https: and did not set &#34;H2Upgrade on&#34; are unaffected by this issue.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2019-0196" class="text-dark">CVE-2019-0196</a>
+</th>
+<td>A vulnerability was found in Apache HTTP Server 2.4.17 to 2.4.38. Using fuzzed network input, the http/2 request handling could be made to access freed memory in string comparison when determining the method of a request and thus process the request incorrectly.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2019-0211" class="text-dark">CVE-2019-0211</a>
+</th>
+<td>In Apache HTTP Server 2.4 releases 2.4.17 to 2.4.38, with MPM event, worker or prefork, code executing in less-privileged child processes or threads (including scripts executed by an in-process scripting interpreter) could execute arbitrary code with the privileges of the parent process (usually root) by manipulating the scoreboard. Non-Unix systems are not affected.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-15710" class="text-dark">CVE-2017-15710</a>
+</th>
+<td>In Apache httpd 2.0.23 to 2.0.65, 2.2.0 to 2.2.34, and 2.4.0 to 2.4.29, mod_authnz_ldap, if configured with AuthLDAPCharsetConfig, uses the Accept-Language header value to lookup the right charset encoding when verifying the user&#39;s credentials. If the header value is not present in the charset conversion table, a fallback mechanism is used to truncate it to a two characters value to allow a quick retry (for example, &#39;en-US&#39; is truncated to &#39;en&#39;). A header value of less than two characters forces an out of bound write of one NUL byte to a memory location that is not part of the string. In the worst case, quite unlikely, the process would crash which could be used as a Denial of Service attack. In the more likely case, this memory is already reserved for future use and the issue has no effect at all.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-7668" class="text-dark">CVE-2017-7668</a>
+</th>
+<td>The HTTP strict parsing changes added in Apache httpd 2.2.32 and 2.4.24 introduced a bug in token list parsing, which allows ap_find_token() to search past the end of its input string. By maliciously crafting a sequence of request headers, an attacker may be able to cause a segmentation fault, or to force ap_find_token() to return an incorrect value.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-15715" class="text-dark">CVE-2017-15715</a>
+</th>
+<td>In Apache httpd 2.4.0 to 2.4.29, the expression specified in &lt;FilesMatch&gt; could match &#39;$&#39; to a newline character in a malicious filename, rather than matching only the end of the filename. This could be exploited in environments where uploads of some files are are externally blocked, but only by matching the trailing portion of the filename.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2018-17199" class="text-dark">CVE-2018-17199</a>
+</th>
+<td>In Apache HTTP Server 2.4 release 2.4.37 and prior, mod_session checks the session expiry time before decoding the session. This causes session expiry time to be ignored for mod_session_cookie sessions since the expiry time is loaded when the session is decoded.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-9788" class="text-dark">CVE-2017-9788</a>
+</th>
+<td>In Apache httpd before 2.2.34 and 2.4.x before 2.4.27, the value placeholder in [Proxy-]Authorization headers of type &#39;Digest&#39; was not initialized or reset before or between successive key=value assignments by mod_auth_digest. Providing an initial key with no &#39;=&#39; assignment could reflect the stale value of uninitialized pool memory used by the prior request, leading to leakage of potentially confidential information, and a segfault in other cases resulting in denial of service.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-3167" class="text-dark">CVE-2017-3167</a>
+</th>
+<td>In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, use of the ap_get_basic_auth_pw() by third-party modules outside of the authentication phase may lead to authentication requirements being bypassed.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-3169" class="text-dark">CVE-2017-3169</a>
+</th>
+<td>In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, mod_ssl may dereference a NULL pointer when third-party modules call ap_hook_process_connection() during an HTTP request to an HTTPS port.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2016-4979" class="text-dark">CVE-2016-4979</a>
+</th>
+<td>The Apache HTTP Server 2.4.18 through 2.4.20, when mod_http2 and mod_ssl are enabled, does not properly recognize the &#34;SSLVerifyClient require&#34; directive for HTTP/2 request authorization, which allows remote attackers to bypass intended access restrictions by leveraging the ability to send multiple requests over a single connection and aborting a renegotiation.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2019-0220" class="text-dark">CVE-2019-0220</a>
+</th>
+<td>A vulnerability was found in Apache HTTP Server 2.4.0 to 2.4.38. When the path component of a request URL contains multiple consecutive slashes (&#39;/&#39;), directives such as LocationMatch and RewriteRule must account for duplicates in regular expressions while other aspects of the servers processing will implicitly collapse them.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2016-4975" class="text-dark">CVE-2016-4975</a>
+</th>
+<td>Possible CRLF injection allowing HTTP response splitting attacks for sites which use mod_userdir. This issue was mitigated by changes made in 2.4.25 and 2.2.32 which prohibit CR or LF injection into the &#34;Location&#34; or other outbound header key or value. Fixed in Apache HTTP Server 2.4.25 (Affected 2.4.1-2.4.23). Fixed in Apache HTTP Server 2.2.32 (Affected 2.2.0-2.2.31).</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2018-1283" class="text-dark">CVE-2018-1283</a>
+</th>
+<td>In Apache httpd 2.4.0 to 2.4.29, when mod_session is configured to forward its session data to CGI applications (SessionEnv on, not the default), a remote user may influence their content by using a &#34;Session&#34; header. This comes from the &#34;HTTP_SESSION&#34; variable name used by mod_session to forward its data to CGIs, since the prefix &#34;HTTP_&#34; is also used by the Apache HTTP Server to pass HTTP header fields, per CGI specifications.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2016-8740" class="text-dark">CVE-2016-8740</a>
+</th>
+<td>The mod_http2 module in the Apache HTTP Server 2.4.17 through 2.4.23, when the Protocols configuration includes h2 or h2c, does not restrict request-header length, which allows remote attackers to cause a denial of service (memory consumption) via crafted CONTINUATION frames in an HTTP/2 request.</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2016-8743" class="text-dark">CVE-2016-8743</a>
+</th>
+<td>Apache HTTP Server, in all releases prior to 2.2.32 and 2.4.25, was liberal in the whitespace accepted from requests and sent in response lines and headers. Accepting these different behaviors represented a security concern when httpd participates in any chain of proxies or interacts with back-end application servers, either through mod_proxy or using conventional CGI mechanisms, and may result in request smuggling, response splitting and cache pollution.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="six columns">
+<div class="card card-light-blue card-padding">
+<h1><i class="far fa-sitemap  fa-fw "></i> Open<em>Ports</em>
+</h1>
+<div id="ports"><a href="#21" class="bg-primary">21</a><a href="#22" class="bg-primary">22</a><a href="#80" class="bg-primary">80</a><a href="#443" class="bg-primary">443</a>
+</div>
+</div><a name="21"></a>
+<h6 id="21" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A96259386">96259386</a> | 2021-12-14T20:42:33.223937
+        </pre><span><strong>21</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<pre>220 Benvenuto al servizio ftp di www.uisp.it.
+530 Login incorrect.
+530 Please login with USER and PASS.
+211-Features:
+ EPRT
+ EPSV
+ MDTM
+ PASV
+ REST STREAM
+ SIZE
+ TVFS
+211 End
+</pre>
+</div><a name="22"></a>
+<h6 id="22" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A1450434936">1450434936</a> | 2021-12-16T02:13:15.166213
+        </pre><span><strong>22</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>OpenSSH</em><span class="text-secondary">7.2p2 Ubuntu-4ubuntu2.8</span>
+</h1>
+<pre>SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.8
+Key type: ssh-rsa
+Key: AAAAB3NzaC1yc2EAAAADAQABAAABAQCob5xD0dTN4KjO7VIfpBOPtgXbkq7dK/0dGO119+ion1FZ
+8vI6MMTlQJ8WhpkKoFEJLJKTjn8fBIxiGJFxUP+nA0T9u/eEZfVrMSRnnryzWo4EOBOd39ILTAFj
+jDNkPolSAIs/QCVrTHBdI36tlXQhLu4QotKNQjSD6kJ7HAIpff7QtAFLiPqpr8jTV1oPOnnq+uX5
+zByORBqZTNNrru4Oy9Ucc2wVlwN84au56UtbbRc9wqBOjHSVKZ80rXCkSCJfAPGNuH9TmI9f5av3
+wcYJtJ35rrqwQo2AnldCYYxABPGF5gu3dZGUd+nnR5VOsLGx1uV5pQPz+MT66Td8Hjdv
+Fingerprint: d5:82:65:93:1b:4a:c7:a8:69:64:c1:3f:a4:92:f6:e7
+
+Kex Algorithms:
+	curve25519-sha256@libssh.org
+	ecdh-sha2-nistp256
+	ecdh-sha2-nistp384
+	ecdh-sha2-nistp521
+	diffie-hellman-group-exchange-sha256
+	diffie-hellman-group14-sha1
+
+Server Host Key Algorithms:
+	ssh-rsa
+	rsa-sha2-512
+	rsa-sha2-256
+	ecdsa-sha2-nistp256
+	ssh-ed25519
+
+Encryption Algorithms:
+	chacha20-poly1305@openssh.com
+	aes128-ctr
+	aes192-ctr
+	aes256-ctr
+	aes128-gcm@openssh.com
+	aes256-gcm@openssh.com
+
+MAC Algorithms:
+	umac-64-etm@openssh.com
+	umac-128-etm@openssh.com
+	hmac-sha2-256-etm@openssh.com
+	hmac-sha2-512-etm@openssh.com
+	hmac-sha1-etm@openssh.com
+	umac-64@openssh.com
+	umac-128@openssh.com
+	hmac-sha2-256
+	hmac-sha2-512
+	hmac-sha1
+
+Compression Algorithms:
+	none
+	zlib@openssh.com
+
+</pre>
+</div><a name="80"></a>
+<h6 id="80" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=http.html_hash%3A-566593542">-566593542</a> | 2021-12-28T11:37:50.396612
+        </pre><span><strong>80</strong> /
+tcp</span>
+<a href="http://185.53.1.82:80" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>Apache httpd</em><span class="text-secondary">2.4.18</span>
+</h1>
+<pre>HTTP/1.1 200 OK
+Date: Tue, 28 Dec 2021 11:37:50 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Last-Modified: Thu, 05 Jan 2017 11:17:05 GMT
+ETag: &#34;2c39-545570a9b8181&#34;
+Accept-Ranges: bytes
+Content-Length: 11321
+Vary: Accept-Encoding
+Content-Type: text/html
+
+</pre>
+</div><a name="443"></a>
+<h6 id="443" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=http.html_hash%3A229599113">229599113</a> | 2021-12-19T14:37:19.732609
+        </pre><span><strong>443</strong> /
+tcp</span>
+<a href="https://185.53.1.82:443" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>Apache httpd</em><span class="text-secondary">2.4.18</span>
+</h1>
+<pre>HTTP/1.1 200 OK
+Date: Sun, 19 Dec 2021 14:37:19 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Cache-Control: no-cache, private
+Set-Cookie: XSRF-TOKEN=eyJpdiI6IlhyWG1oa3NvMjFzc0oyMzlndEN6Qmc9PSIsInZhbHVlIjoiQTFRT2RQSWFtRWZPN2FiMWhuWUoxQk9yWWdBYU9rMzZwY0cwOE5CdFllMENvd3RQamFtWDJwNFVGTjlxSXJsRiIsIm1hYyI6IjZhOGMxM2Q4ZmQ1YjRkOTJlNjFmOTJhOTQyOTdhZGQ2ZDUyNTJmZjdjOTJjZWY4YTA1ODI0NTIwNjZlNjUzYTIifQ%3D%3D; expires=Sun, 19-Dec-2021 16:37:19 GMT; Max-Age=7200; path=/
+Set-Cookie: uisp_area_riservata_20_session=eyJpdiI6IkxPc0ZBMTE4aHpKbHdIU2htNGIxUkE9PSIsInZhbHVlIjoiaGU3RFhsRWl4NUZxWm1FU0t6Sis0dFFjS0VmYWxUK3pvQnlDVVFXZjJiS0t4VmlTbzFHdGJNV3RSdUlpWUZOamxnZkJ5NmxkUDJUb0hcL0FWTHNheTVnNkRDVTRycDY0ZjVLOG5VVjErc0J5VzBEQ09lc1BvdzNNSHMrRVwvRjZSTyIsIm1hYyI6IjFlNDkzNjg2NWY4NjVhMzM2Mjk2OTI0ZDk3ZGQ3ZGJmZDhkOWM3MjZhY2M4OTkyYjUxZTFmYTY2NWIyYTk0ZGMifQ%3D%3D; expires=Sun, 19-Dec-2021 16:37:19 GMT; Max-Age=7200; path=/; httponly
+Vary: Accept-Encoding
+Content-Length: 7095
+Content-Type: text/html; charset=UTF-8
+
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:e4:05:25:95:d9:ec:d3:58:87:af:db:0a:99:ed:3a:51:c1
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Dec 12 21:30:30 2021 GMT
+            Not After : Mar 12 21:30:29 2022 GMT
+        Subject: CN=alboformazione.uisp.it
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:ad:33:2b:60:5d:86:3a:bf:d4:d1:33:2a:04:38:
+                    ac:8f:77:20:91:8b:f5:da:47:e9:9b:19:9d:8b:05:
+                    e0:50:24:ba:bd:a1:80:e3:2b:38:0c:66:af:35:9d:
+                    af:20:13:ca:5d:7a:10:16:ed:03:36:78:87:45:f5:
+                    6a:88:0a:35:d6:73:0d:de:09:9e:0d:a1:ae:da:a4:
+                    24:28:50:99:e6:4a:01:ab:27:4a:c4:57:c3:77:e6:
+                    ff:38:81:18:b7:c8:91:ad:d8:a3:35:66:02:7a:2b:
+                    a2:40:13:f0:ff:8f:c2:9a:0c:50:62:36:e7:ff:41:
+                    51:66:66:ca:aa:da:17:26:aa:4e:33:4b:e2:3c:91:
+                    43:fe:2e:cf:4b:96:32:87:7b:b0:66:27:30:d2:ac:
+                    85:36:0f:99:a9:f2:e4:b9:20:62:03:08:ba:01:32:
+                    f8:64:71:a9:0f:c5:a2:e8:c9:07:b5:6e:6a:21:6a:
+                    0c:07:62:63:25:04:e0:bc:ab:99:35:48:07:67:a1:
+                    d9:44:52:78:22:ec:7e:ff:35:ef:52:80:03:85:d2:
+                    bf:ef:45:4d:9f:98:d6:1a:ee:4d:e2:26:38:a3:e4:
+                    72:76:03:f7:59:fd:c4:06:8f:bc:76:e6:37:8a:dc:
+                    07:f8:65:fd:cc:9a:c8:a2:6e:00:97:48:ea:60:e7:
+                    ea:57
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                2C:0B:2C:55:F7:2B:0D:9B:F9:9F:6C:64:B6:47:28:0C:FD:D0:62:00
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:alboformazione.uisp.it
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : DF:A5:5E:AB:68:82:4F:1F:6C:AD:EE:B8:5F:4E:3E:5A:
+                                EA:CD:A2:12:A4:6A:5E:8E:3B:12:C0:20:44:5C:2A:73
+                    Timestamp : Dec 12 22:30:30.473 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:E2:A0:A9:91:57:85:98:41:DC:80:E1:
+                                A6:02:91:77:BC:22:39:18:2C:4A:C4:F2:F5:A0:80:5B:
+                                13:9A:F9:D9:B9:02:21:00:EB:77:41:12:C1:B9:66:9F:
+                                9E:E5:82:69:05:71:0F:48:A3:57:2B:71:2C:E7:62:54:
+                                4D:6B:FC:53:B8:D3:CC:DC
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Dec 12 22:30:30.456 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:44:02:20:42:81:BC:3A:97:65:77:2C:25:EB:A5:E5:
+                                1B:1B:ED:0A:6A:CA:3B:3C:86:15:45:35:9A:87:13:1A:
+                                C8:FD:0B:5A:02:20:3F:B6:15:40:6B:FE:C7:FA:77:6E:
+                                2F:B4:23:5F:7A:44:6F:00:15:B5:93:4A:A5:6C:57:CF:
+                                42:4B:EF:FD:CA:E2
+    Signature Algorithm: sha256WithRSAEncryption
+         65:c5:e0:81:d9:77:b3:52:46:57:ef:67:6f:f3:c3:90:29:4d:
+         9c:75:b0:fa:c4:7b:de:86:54:c9:85:e0:72:80:41:65:58:17:
+         74:fd:0d:99:46:e1:5d:aa:9e:b3:0c:e5:5b:3d:eb:56:56:c0:
+         99:05:09:2f:7b:71:a9:d7:e0:0d:c3:60:8d:df:06:27:9d:88:
+         a5:be:74:26:0c:57:5c:80:3c:c0:cd:21:b7:3f:ff:69:16:1f:
+         69:97:af:14:e1:bb:a5:fc:c1:1a:f7:e0:28:4f:95:12:25:7a:
+         67:51:b3:56:42:6a:21:86:ce:81:1d:e4:41:88:05:7e:80:6d:
+         8f:e5:37:ec:08:ea:46:92:23:fc:d6:7f:b5:20:75:dc:cb:9f:
+         a1:95:e7:10:16:dc:19:35:69:0a:95:f3:eb:f5:62:39:86:6e:
+         28:93:9a:b2:56:dd:6f:d1:98:03:1a:28:39:38:38:31:a2:65:
+         09:af:0e:55:ba:b9:11:d2:3b:99:cf:83:be:c4:5a:97:d9:73:
+         44:f9:2e:c0:5b:af:21:f2:5c:7f:2e:66:ff:61:13:57:8a:e9:
+         1b:18:9f:16:d5:a9:8d:8c:dc:08:ce:c6:b7:29:06:14:ae:7e:
+         ea:61:a9:1e:c9:b4:19:f7:18:55:dc:94:93:ce:1c:bb:b3:cd:
+         83:a3:34:34
+</pre>
+</div>
+</div>
+</div>
+</div>
+<br />
+<div class="container u-full-width bg-solid"><br /><br />
+<div class="container">
+<div class="row">
+<div class="three columns">
+<h6 class="grid-heading">Products</h6>
+<ul>
+<li><a href="https://monitor.shodan.io" class="light">Monitor</a>
+</li>
+<li><a href="https://beta.shodan.io" class="light">Search Engine</a>
+</li>
+<li><a href="https://developer.shodan.io" class="light">Developer API</a>
+</li>
+<li><a href="https://maps.shodan.io" class="light">Maps</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 style="visibility:hidden" class="grid-heading">&nbsp;</h6>
+<ul>
+<li><a href="https://enterprise.shodan.io" class="light">Bulk Data</a>
+</li>
+<li><a href="https://images.shodan.io" class="light">Images</a>
+</li>
+<li><a href="https://snippets.shodan.io" class="light">Snippets</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 class="grid-heading">Pricing</h6>
+<ul>
+<li><a href="https://www.shodan.io/store/member" class="light">Membership</a>
+</li>
+<li><a href="https://developer.shodan.io/pricing" class="light">API Subscriptions</a>
+</li>
+<li><a href="https://enterprise.shodan.io" class="light">Enterprise</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 class="grid-heading">Contact Us</h6>
+<ul>
+<li><a href="mailto:support@shodan.io" class="light">support@shodan.io</a>
+</li>
+<li>
+<h5><a href="https://twitter.com/shodanhq" aria-label="Twitter" class="text-secondary"><i class="fab fa-twitter   "></i></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/company/shodan" aria-label="Linkedin" class="text-secondary"><i class="fab fa-linkedin   "></i></a>&nbsp;&nbsp;<a href="https://www.facebook.com/shodan.io" aria-label="Facebook" class="text-secondary"><i class="fab fa-facebook   "></i></a>
+</h5>
+</li>
+</ul>
+<p class="light">Shodan &reg; - All rights reserved</p>
+</div>
+</div>
+</div>
+</div>
+<script src="/static/mapbox-gl-js/js/mapbox-gl.js"></script>
+<script>(function () {
+    mapboxgl.setRTLTextPlugin('/static/mapbox-gl-js/js/mapbox-gl-rtl-text.js')
+    let map = new mapboxgl.Map({
+        container: 'host-map',
+        style: 'https://maptiles.shodan.io/styles/hybrid/style.json',
+        center: [12.51133, 41.89193],
+        zoom: 10,
+        interactive: false,
+    })
+})()
+</script>
+</body>
+</html>

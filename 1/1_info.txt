@@ -1,0 +1,19 @@
+***************************************************************************************************************************************************
+Ping Output:
+*************
+--------------------------------------------------------------------------------------------------------------------
+└─$ ping www.dietapremium.pl    
+--------------------------------------------------------------------------------------------------------------------
+PING dietapremium.pl (79.96.77.115) 56(84) bytes of data.
+64 bytes from cloudserver070473.home.pl (79.96.77.115): icmp_seq=1 ttl=51 time=194 ms
+64 bytes from cloudserver070473.home.pl (79.96.77.115): icmp_seq=2 ttl=51 time=202 ms
+--------------------------------------------------------------------------------------------------------------------
+
+https://www.dietapremium.pl/login
+
+credentials created(uname and password):
+ ************
+ asdf@asdf.asdf
+ Ax2D7KjP5eRrhHj
+
+-- > Without any check password can be change -> "Next step to find the existing user/admin credentials to gain other_user/admin access.

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,td,th {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 34px; color: #333333;}
+body {background-color: #EDE4E5; margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; background-image: url(images/bg.jpg); background-position: center top; background-repeat:no-repeat}
+a:link {color: #006DD9; text-decoration: none;}
+a:visited {text-decoration: none; color: #006DD9;}
+a:hover {text-decoration: underline; color: #006DD9;}
+a:active {text-decoration: none; color: #006DD9;}
+.largefont {font-size: 80px;}
+.spacing {line-height: 60px;}
+.largefont2 {font-size: 50px;}
+.largefont3 {font-size: 65px;}
+.largefont4 {font-size: 42px;}
+.smallfont {font-size: 15px;}
+.smallspacing {line-height: 25px;}
+.lrgspacing {line-height: 70px;}

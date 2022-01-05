@@ -1,0 +1,61 @@
+<?php
+session_start();
+require_once('../config.php');	
+
+
+		$id = "";
+	if(isset($_GET['id'])!=""){
+    $id = $_GET['id'];
+	$resultarray=mysql_fetch_array(mysql_query("SELECT * FROM tbl_storeddata where id ='".$id."'"));
+	}
+
+echo "Name : ";
+echo $resultarray['name'];
+echo '<br>';echo '<br>';
+echo "Email Id : ";
+echo $resultarray['emailid'];
+echo '<br>';echo '<br>';
+echo "Friend Name : ";
+echo $resultarray['frd_name'];
+echo '<br>';echo '<br>';
+echo "Friend_Email : ";
+echo $resultarray['frd_email'];
+echo '<br>';echo '<br>';
+echo "Page Name : ";
+echo $resultarray['pagename'];
+echo '<br>';echo '<br>';
+echo "Address : ";
+echo $resultarray['adderss1'];
+echo '<br>';echo '<br>';
+echo "Address  : ";
+echo $resultarray['adderss2'];
+echo '<br>';echo '<br>';
+echo "Home Phone : ";
+echo $resultarray['homephone'];
+echo '<br>';echo '<br>';
+echo "Business Phone : ";
+echo $resultarray['busphone'];
+echo '<br>';echo '<br>';
+echo "Business Phone : ";
+echo $resultarray['busphone1'];
+echo '<br>';echo '<br>';
+echo "Address : ";
+echo $resultarray['adderss3'];
+echo '<br>';echo '<br>';
+echo "City : ";
+echo $resultarray['city'];
+echo '<br>';echo '<br>';
+echo "State : ";
+echo $resultarray['state'];
+echo '<br>';echo '<br>';
+
+echo "ZIP : ";
+echo $resultarray['zip'];
+echo '<br>';echo '<br>';
+echo "Comments : ";
+echo $resultarray['comment'];
+echo '<br>';echo '<br>';
+echo "Created On : ";
+echo $resultarray['createon'];
+
+?>

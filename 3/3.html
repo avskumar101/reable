@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>35.192.142.147</title>
+<meta charset="utf-8">
+<meta name="description" content="Search Engine for the Internet of Things">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://wire.shodan.io/v2.4.0/default/css/wire.css" rel="stylesheet" />
+<link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="/static/img/apple-touch-icon-192.png">
+<link rel="search" href="/static/opensearch.xml" type="application/opensearchdescription+xml" title="Shodan">
+<script defer src="https://kit.fontawesome.com/b7e79643d9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/static/mapbox-gl-js/css/mapbox-gl.css" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@shodanhq" />
+<meta name="twitter:creator" content="@achillean" />
+<meta name="twitter:title" content="35.192.142.147" />
+<meta name="twitter:description" content="Ports open: 21, 22, 25, 80, 110, 143, 443, 465, 993, 995, 8880" />
+<meta name="twitter:image" content="https://www.shodan.io/host/35.192.142.147/image" />
+<style>#host-map {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#host-title {
+    background-image: none !important;
+    display: inline-block;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 80px 0 0 0;
+    padding: 0 10px;
+}
+
+.host-header-link {
+    padding: 0px 6px;
+    vertical-align: bottom;
+    font-size: 1.5rem;
+    margin-left: 12px;
+}
+
+#ports {
+    margin-top: 10px;
+}
+
+#ports a {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 1.3rem;
+    height: 48px;
+    letter-spacing: 1px;
+    line-height: 48px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 48px;
+}
+
+.banner-title span {
+    font-size: 1.4rem;
+}
+
+.screenshot {
+    width: 100%;
+    margin-top: 10px;
+}
+</style>
+<style>#host ul,
+#host pre {
+    margin-bottom: 0;
+}
+
+#http-components img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#http-components li {
+    display: inline-block;
+}
+
+#vulnerabilities th {
+    vertical-align: top;
+}
+
+#tags {
+    margin: -5px 0 10px;
+}
+
+#tags h6 {
+    display: inline;
+    vertical-align: middle;
+}
+
+.banner pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+:target {
+    animation: flash ease-in 0.5s 1
+}
+
+@keyframes flash {
+    0% {
+        background-color: Yellow;
+        opacity: 1;
+    }
+    100% {}
+}
+</style>
+</head>
+<body>
+<div class="quickbar">
+<ul>
+<li><a href="https://www.shodan.io">Shodan</a>
+</li>
+<li><a href="https://maps.shodan.io">Maps</a>
+</li>
+<li><a href="https://images.shodan.io">Images</a>
+</li>
+<li><a href="https://monitor.shodan.io">Monitor</a>
+</li>
+<li><a href="https://developer.shodan.io">Developer</a>
+</li>
+<li><a href="https://www.shodan.io/about/products">More...</a>
+</li>
+</ul>
+</div>
+<div class="container u-full-width">
+<div class="row">
+<div class="twelve columns">
+<div id="host-map"></div>
+<style>.searchbox {
+    font-family: Arial;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media (max-width: 900px) {
+    .right-menu .menu-item-account {
+        display: none
+    }
+}
+</style>
+<div class="navbar">
+<input id="menu-btn" type="checkbox" class="menu-btn" />
+<label for="menu-btn" class="menu-icon"><span class="navicon"><i class="fa fa-bars  fa-fw "></i></span>
+</label><a href="/" class="title"><img src="/static/img/logo.png" alt="Shodan" width="112" height="32" /></a>
+<ul class="menu sub-menu">
+<li><a href="/explore"><i class="fas fa-globe  fa-fw "></i>Explore</a>
+</li>
+<li><a href="https://account.shodan.io/billing" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase  fa-fw "></i>Pricing
+<i style="font-size: 1.1rem" class="fa fa-external-link  fa-fw "></i></a>
+</li>
+</ul>
+<form action="/search" method="GET">
+<div class="searchbox">
+<div class="input-wrapper">
+<label for="search-query" value="Enter search query" class="visually-hidden"></label>
+<input type="text" name="query" placeholder="Search..." autofocus="autofocus" autocapitalize="none" id="search-query" />
+</div>
+<button type="submit" aria-label="Submit search querxy" data-balloon-disable="data-balloon-disable" class="button-red"><i class="fas fa-search  fa-fw "></i>
+</button>
+</div>
+</form>
+<ul class="menu main-menu right-menu">
+<li><a href="/dashboard" class="highlight-success">Login</a>
+</li>
+</ul>
+</div>
+<script>(function() {
+    let $menuBtn = document.getElementById('menu-btn')
+    document.body.addEventListener('click', function(e) {
+        // Only check when the menu is open
+        if (!$menuBtn.checked) {
+            return
+        }
+
+        let elm = e.target
+        let showMenu = false
+        while (elm) {
+            // Ignore duplicated event
+            if (elm.classList.contains('menu-icon')) {
+                return
+            }
+
+            // Toggle menu when clicking on the menu icon
+            if (elm.id == 'menu-btn') {
+                showMenu = true
+                break
+            }
+            elm = elm.parentElement
+        }
+
+        $menuBtn.checked = showMenu
+    })
+})()
+</script>
+<div>
+<h2 id="host-title" class="bg-dark heading">35.192.142.147</h2><a href="/host/35.192.142.147" class="host-header-link bg-light inline-block"><i class="far fa-browser  fa-fw "></i> Regular View</a><a href="/host/35.192.142.147/raw" class="host-header-link bg-light inline-block"><i class="far fa-terminal  fa-fw "></i> Raw Data</a><a href="/host/35.192.142.147/history" class="host-header-link bg-light inline-block"><i class="far fa-history  fa-fw "></i> History</a>
+</div>
+</div>
+</div>
+</div>
+<div id="host" class="container u-full-width card-padding">
+<div class="row">
+<div class="twelve columns">
+<div class="u-pull-right">
+<h6 style="display: inline" class="grid-heading"><span>Last Update: 2021-12-30</span>
+</h6>
+</div>
+<div id="tags">
+<h6 class="grid-heading"><span>Tags:</span>
+</h6><a href="/search?query=tag%3A%22cloud%22" class="tag ">cloud</a><a href="/search?query=tag%3A%22self-signed%22" class="tag ">self-signed</a><a href="/search?query=tag%3A%22starttls%22" class="tag ">starttls</a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="six columns">
+<div class="card card-yellow card-padding"><a name="general"></a>
+<h1 id="general"><i class="far fa-globe  fa-fw "></i><em>General</em>Information
+</h1>
+<table class="table u-full-width">
+<tr>
+<td>Hostnames</td>
+<td><strong>147.142.192.35.bc.googleusercontent.com</strong>
+</td>
+</tr>
+<tr>
+<td>Domains</td>
+<td><a href="/domain/googleusercontent.com" class="button">googleusercontent.com</a>
+</td>
+</tr>
+<tr>
+<td>Cloud Provider</td>
+<td><strong><a href="/search?query=cloud.provider%3A%22Google%22" class="text-dark">Google</a></strong>
+</td>
+</tr>
+<tr>
+<td>Cloud Region</td>
+<td><strong><a href="/search?query=cloud.region%3A%22us-central1%22" class="text-dark">us-central1</a></strong>
+</td>
+</tr>
+<tr>
+<td>Country</td>
+<td><strong><a href="/search?query=country%3A%22US%22" class="text-dark">United States</a></strong>
+</td>
+</tr>
+<tr>
+<td>City</td>
+<td><strong><a href="/search?query=city%3A%22Council+Bluffs%22" class="text-dark">Council Bluffs</a></strong>
+</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td><strong><a href="/search?query=org%3A%22Google+LLC%22" class="text-dark">Google LLC</a></strong>
+</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td><strong><a href="/search?query=isp%3A%22Google+LLC%22" class="text-dark">Google LLC</a></strong>
+</td>
+</tr>
+<tr>
+<td>ASN</td>
+<td><strong><a href="/search?query=asn%3A%22AS15169%22" class="text-dark">AS15169</a></strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="card card-red card-padding"><a name="vulns"></a>
+<h1 id="vulns"><i class="far fa-exclamation-triangle  fa-fw "></i><em>Vulnerabilities</em>
+</h1>
+<p class="normalize text-secondary">Note: the device may not be impacted by all of these issues. The vulnerabilities are implied based on the software and version.</p>
+<table id="vulnerabilities" class="table">
+<tbody>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2018-15919" class="text-dark">CVE-2018-15919</a>
+</th>
+<td>Remotely observable behaviour in auth-gss2.c in OpenSSH through 7.8 could be used by remote attackers to detect existence of users on a target system when GSS2 is in use. NOTE: the discoverer states &#39;We understand that the OpenSSH developers do not want to treat such a username enumeration (or &#34;oracle&#34;) as a vulnerability.&#39;</td>
+</tr>
+<tr>
+<th style="min-width:120px"><a href="/search?query=vuln%3ACVE-2017-15906" class="text-dark">CVE-2017-15906</a>
+</th>
+<td>The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers to create zero-length files.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="six columns">
+<div class="card card-light-blue card-padding">
+<h1><i class="far fa-sitemap  fa-fw "></i> Open<em>Ports</em>
+</h1>
+<div id="ports"><a href="#21" class="bg-primary">21</a><a href="#22" class="bg-primary">22</a><a href="#25" class="bg-primary">25</a><a href="#80" class="bg-primary">80</a><a href="#110" class="bg-primary">110</a><a href="#143" class="bg-primary">143</a><a href="#443" class="bg-primary">443</a><a href="#465" class="bg-primary">465</a><a href="#993" class="bg-primary">993</a><a href="#995" class="bg-primary">995</a><a href="#8880" class="bg-primary">8880</a>
+</div>
+</div><a name="21"></a>
+<h6 id="21" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-390104617">-390104617</a> | 2021-12-29T10:12:15.945772
+        </pre><span><strong>21</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<pre>220 ProFTPD Server (ProFTPD) [35.192.142.147]
+530 Login incorrect.
+214-The following commands are recognized (* =&gt;&#39;s unimplemented):
+ CWD     XCWD    CDUP    XCUP    SMNT*   QUIT    PORT    PASV    
+ EPRT    EPSV    ALLO    RNFR    RNTO    DELE    MDTM    RMD     
+ XRMD    MKD     XMKD    PWD     XPWD    SIZE    SYST    HELP    
+ NOOP    FEAT    OPTS    HOST    CLNT    AUTH    CCC*    CONF*   
+ ENC*    MIC*    PBSZ    PROT    TYPE    STRU    MODE    RETR    
+ STOR    STOU    APPE    REST    ABOR    RANG    USER    PASS    
+ ACCT*   REIN*   LIST    NLST    STAT    SITE    MLSD    MLST    
+214 Direct comments to root@10.128.0.2
+211-Features:
+ AUTH TLS
+ CCC
+ CLNT
+ EPRT
+ EPSV
+ HOST
+ LANG en-US.UTF-8*
+ MDTM
+ MFF modify;UNIX.group;UNIX.mode;
+ MFMT
+ MLST modify*;perm*;size*;type*;unique*;UNIX.group*;UNIX.groupname*;UNIX.mode*;UNIX.owner*;UNIX.ownername*;
+ PBSZ
+ PROT
+ RANG STREAM
+ REST STREAM
+ SIZE
+ SSCN
+ TVFS
+ UTF8
+211 End
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="22"></a>
+<h6 id="22" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-214960671">-214960671</a> | 2021-12-28T20:14:35.928261
+        </pre><span><strong>22</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>OpenSSH</em><span class="text-secondary">7.4</span>
+</h1>
+<pre>SSH-2.0-OpenSSH_7.4
+Key type: ssh-rsa
+Key: AAAAB3NzaC1yc2EAAAADAQABAAABAQC+qELk5YMvCyYE2zC2/nxNErm+fPj/JktY8knULpct7jdl
+VHG0OShwTL4DrAD17NoHAnPr2Uqg8T50nsGzgX4rdJ0+ZJo5ljvDjZL197pY+NHybP1xkTWQ/yD/
+9RlZPj00szxTShTYJXO/dG0HIYW1hG9/bM5q2ZhBMWuPM+Byy5qktYSh97oQNH1tUarv4LEtdjXm
+fhS+RjGo4Fhi+fGT0668aUlSSwK8LO96WB1BkxHVxbtpetesQQJ74gXERS8M2axvsbfh+NohhjK2
+VN4ufH2g4FLLFhmhIY5Bi14h2+W5LBiKM8E8MmIHMGC5MlNYZcMlmMdvq2fScqoj7dIx
+Fingerprint: 9e:19:87:07:f8:96:43:fd:af:b8:8e:c5:da:59:21:8e
+
+Kex Algorithms:
+	curve25519-sha256
+	curve25519-sha256@libssh.org
+	ecdh-sha2-nistp256
+	ecdh-sha2-nistp384
+	ecdh-sha2-nistp521
+	diffie-hellman-group-exchange-sha256
+	diffie-hellman-group16-sha512
+	diffie-hellman-group18-sha512
+	diffie-hellman-group-exchange-sha1
+	diffie-hellman-group14-sha256
+	diffie-hellman-group14-sha1
+	diffie-hellman-group1-sha1
+
+Server Host Key Algorithms:
+	ssh-rsa
+	rsa-sha2-512
+	rsa-sha2-256
+	ecdsa-sha2-nistp256
+	ssh-ed25519
+
+Encryption Algorithms:
+	chacha20-poly1305@openssh.com
+	aes128-ctr
+	aes192-ctr
+	aes256-ctr
+	aes128-gcm@openssh.com
+	aes256-gcm@openssh.com
+	aes128-cbc
+	aes192-cbc
+	aes256-cbc
+	blowfish-cbc
+	cast128-cbc
+	3des-cbc
+
+MAC Algorithms:
+	umac-64-etm@openssh.com
+	umac-128-etm@openssh.com
+	hmac-sha2-256-etm@openssh.com
+	hmac-sha2-512-etm@openssh.com
+	hmac-sha1-etm@openssh.com
+	umac-64@openssh.com
+	umac-128@openssh.com
+	hmac-sha2-256
+	hmac-sha2-512
+	hmac-sha1
+
+Compression Algorithms:
+	none
+	zlib@openssh.com
+
+</pre>
+</div><a name="25"></a>
+<h6 id="25" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A1536952296">1536952296</a> | 2021-12-27T06:27:22.377780
+        </pre><span><strong>25</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>Postfix smtpd</em>
+</h1>
+<pre>220 host.square1server.com ESMTP Postfix
+250-host.square1server.com
+250-PIPELINING
+250-SIZE 10240000
+250-ETRN
+250-STARTTLS
+250-AUTH DIGEST-MD5 CRAM-MD5 PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="80"></a>
+<h6 id="80" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=http.html_hash%3A-334655202">-334655202</a> | 2021-12-21T08:42:45.601796
+        </pre><span><strong>80</strong> /
+tcp</span>
+<a href="http://35.192.142.147:80" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>Apache httpd</em>
+</h1>
+<pre>HTTP/1.1 200 OK
+Date: Tue, 21 Dec 2021 08:42:45 GMT
+Server: Apache
+Last-Modified: Mon, 09 Mar 2020 09:54:13 GMT
+ETag: &#34;ef0-5a068fc50c31d&#34;
+Accept-Ranges: bytes
+Content-Length: 3824
+X-Powered-By: PleskLin
+Content-Type: text/html
+
+</pre>
+</div><a name="110"></a>
+<h6 id="110" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-974802398">-974802398</a> | 2021-12-29T15:11:25.400810
+        </pre><span><strong>110</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<pre>+OK Dovecot ready. &lt;23e8.3.61cc7a99.H7PtwBQc5hiMe/9t2IrK5w==@square1server-vm&gt;
++OK
+CAPA
+TOP
+UIDL
+RESP-CODES
+PIPELINING
+AUTH-RESP-CODE
+STLS
+USER
+SASL PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+.
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="143"></a>
+<h6 id="143" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-127552878">-127552878</a> | 2021-12-26T13:30:39.534706
+        </pre><span><strong>143</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<pre>* OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5] Dovecot ready.
+* CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5
+A001 OK Pre-login capabilities listed, post-login capabilities have more.
+* ID (&#34;name&#34; &#34;Dovecot&#34;)
+A002 OK ID completed.
+A003 BAD Error in IMAP command received by server.
+* BYE Logging out
+A004 OK Logout completed.
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="443"></a>
+<h6 id="443" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=http.html_hash%3A-334655202">-334655202</a> | 2021-12-30T06:06:23.597524
+        </pre><span><strong>443</strong> /
+tcp</span>
+<a href="https://35.192.142.147:443" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>Apache httpd</em>
+</h1>
+<pre>HTTP/1.1 200 OK
+Date: Thu, 30 Dec 2021 06:01:06 GMT
+Server: Apache
+Last-Modified: Mon, 09 Mar 2020 09:54:13 GMT
+ETag: &#34;ef0-5a068fc50c31d&#34;
+Accept-Ranges: bytes
+Content-Length: 3824
+X-Powered-By: PleskLin
+Content-Type: text/html
+
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number: 1517481918 (0x5a72efbe)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CH, L=Schaffhausen, O=Plesk, CN=Plesk/emailAddress=info@plesk.com
+        Validity
+            Not Before: Feb  1 10:45:18 2018 GMT
+            Not After : Feb  1 10:45:18 2019 GMT
+        Subject: C=CH, L=Schaffhausen, O=Plesk, CN=Plesk/emailAddress=info@plesk.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:be:9d:2b:b0:83:25:5c:7b:2d:db:7b:b2:d4:9f:
+                    e5:52:cf:2b:aa:88:b0:01:55:e6:2f:21:71:13:44:
+                    a9:e1:97:b5:1a:1d:19:15:cc:00:2d:37:08:f4:a9:
+                    89:9d:1b:33:ab:42:cf:9a:39:34:45:18:16:c3:12:
+                    74:e8:32:e9:fa:b2:0b:47:5c:a8:95:c8:f8:c8:d6:
+                    b3:74:97:f7:b3:ab:8b:04:e2:8d:d9:9f:d9:b5:0f:
+                    0e:2d:20:73:16:5c:86:88:19:60:2e:38:78:e7:79:
+                    38:8a:31:77:b7:80:20:66:e0:8c:a9:a7:01:04:4d:
+                    e2:46:db:9f:80:e7:de:a4:f7:5b:24:bf:d1:6c:37:
+                    07:77:b5:8b:74:f0:40:db:b3:95:9e:fe:1e:75:b4:
+                    78:df:6a:5b:fc:23:ed:05:97:6f:fa:ca:ed:80:32:
+                    af:51:fe:52:05:ec:67:c5:81:b6:ea:64:cd:0e:0f:
+                    c8:09:de:37:16:78:d5:77:bd:5a:68:a4:3d:09:a3:
+                    e6:9a:db:f8:3d:f8:5d:8f:5c:31:ee:87:50:66:71:
+                    d1:79:8f:07:d3:11:a9:4f:50:8c:9e:b9:fa:a3:85:
+                    56:94:b8:03:13:bf:df:d5:d1:79:f8:ae:1a:9e:a8:
+                    9d:eb:4b:92:a4:3d:31:81:8c:77:ac:b5:96:ee:43:
+                    e7:fd
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha256WithRSAEncryption
+         69:fe:86:dc:22:42:20:c0:50:c4:1f:8f:ba:64:2d:6e:ae:6b:
+         65:83:e6:f3:0c:2f:06:e7:5d:81:0d:12:82:8d:3a:14:68:ba:
+         f6:31:e1:b2:6b:c7:49:87:9f:fc:91:cd:0f:c2:d8:6d:0a:2b:
+         0b:75:5c:8f:60:ad:a6:05:85:6d:b8:60:1f:0d:46:c6:a5:3a:
+         75:30:06:95:ec:28:ed:45:d2:2c:bc:bf:a2:3a:9e:90:09:cc:
+         bf:1e:e6:1c:5f:f9:a3:94:6e:84:25:ff:87:b6:31:6b:5f:94:
+         74:a1:69:35:31:a7:66:7c:31:f1:3f:fb:23:9b:dc:f9:90:fe:
+         dc:19:65:cf:07:de:fb:58:1f:11:65:51:de:be:a6:54:39:3a:
+         cb:28:e2:af:2b:c4:b8:31:87:e6:f5:85:52:f3:ec:34:21:c9:
+         d0:7c:16:a1:37:95:95:a2:1f:60:38:fd:3d:c9:6a:0b:74:07:
+         54:b0:9c:66:68:cd:b5:64:5a:bc:bc:a9:a8:77:7b:f0:2d:44:
+         74:e7:f2:80:c4:35:db:61:0d:76:01:5a:93:e8:43:e0:b3:e5:
+         cc:6b:83:77:fa:29:18:4c:3c:4b:d5:50:e4:fa:5b:2d:9e:7e:
+         0b:96:dd:c5:97:de:bd:ca:58:e9:4c:44:08:cf:01:2c:42:12:
+         29:8a:c9:e4
+</pre>
+</div><a name="465"></a>
+<h6 id="465" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A772727566">772727566</a> | 2021-12-13T04:05:33.971656
+        </pre><span><strong>465</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>Postfix smtpd</em>
+</h1>
+<pre>220 host.square1server.com ESMTP Postfix
+250-host.square1server.com
+250-PIPELINING
+250-SIZE 10240000
+250-ETRN
+250-AUTH DIGEST-MD5 CRAM-MD5 PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="993"></a>
+<h6 id="993" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-628402902">-628402902</a> | 2021-12-20T23:58:54.884543
+        </pre><span><strong>993</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<pre>* OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5] Dovecot ready.
+* CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5
+A001 OK Pre-login capabilities listed, post-login capabilities have more.
+* ID (&#34;name&#34; &#34;Dovecot&#34;)
+A002 OK ID completed.
+A003 BAD Error in IMAP command received by server.
+* BYE Logging out
+A004 OK Logout completed.
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="995"></a>
+<h6 id="995" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-2124670584">-2124670584</a> | 2021-12-27T00:22:58.404866
+        </pre><span><strong>995</strong> /
+tcp</span>
+</h6>
+<div class="card card-padding banner">
+<pre>+OK Dovecot ready. &lt;7a7c.12.61c90758.d/3ywj9YZPSTWy15GNP96w==@square1server-vm&gt;
++OK
+CAPA
+TOP
+UIDL
+RESP-CODES
+PIPELINING
+AUTH-RESP-CODE
+USER
+SASL PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+.
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:d5:f0:23:52:50:bc:ad:ed:a2:97:1f:48:34:40:4b:fa:91
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=Let&#39;s Encrypt, CN=R3
+        Validity
+            Not Before: Oct 30 10:20:07 2021 GMT
+            Not After : Jan 28 10:20:06 2022 GMT
+        Subject: CN=square1server.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:2c:e4:95:c4:00:a8:bc:b9:47:7b:84:a9:ed:
+                    d1:cf:8d:f9:f2:35:97:72:b4:45:c5:76:5b:aa:71:
+                    6c:a2:fe:5a:60:76:e4:ce:33:09:93:46:99:61:36:
+                    99:ad:26:22:95:28:86:81:e2:0e:69:57:a6:84:85:
+                    40:df:6a:51:1b:fd:71:e7:2e:61:07:f4:7c:f4:11:
+                    a7:74:a9:55:5a:48:c4:f3:da:23:49:1f:22:19:24:
+                    59:05:79:f5:0f:9e:84:d0:07:3d:47:4e:ae:dc:ea:
+                    d6:46:64:60:a1:3e:f2:34:de:e5:c7:1b:0a:37:c3:
+                    cf:19:75:16:14:e0:ee:83:5e:e5:31:bd:9e:82:ab:
+                    5f:40:76:cf:e2:6a:02:cd:0a:fa:36:1f:47:03:95:
+                    f2:a4:20:cf:fb:b2:8e:8e:5a:2d:5a:3e:f3:0e:d6:
+                    be:93:53:f1:12:34:dd:1b:65:75:a3:96:33:a6:b7:
+                    87:f9:0f:3d:29:7a:cd:16:bf:b4:ba:37:8d:41:66:
+                    ea:1b:38:11:8e:0c:04:ed:a4:94:3d:94:c0:cd:1a:
+                    a7:58:22:99:72:5a:10:3c:40:ca:83:f7:a8:6a:33:
+                    e9:75:a7:3f:f9:b0:56:6b:15:07:2f:03:55:16:a8:
+                    47:25:0b:80:04:26:8d:f0:80:01:d6:b6:4d:b9:d5:
+                    f3:5b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C1:9C:88:49:D6:F8:F2:0E:F8:E9:E6:1A:48:90:16:BF:A9:1D:E6:B4
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:square1server.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:
+                                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84
+                    Timestamp : Oct 30 11:20:07.593 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:EF:1E:42:D6:29:57:3C:21:73:B8:8E:
+                                11:92:ED:C1:19:FF:C3:83:40:60:14:BB:50:0D:9E:45:
+                                F1:A9:67:DF:70:02:21:00:9A:39:CA:31:9B:7D:8F:D8:
+                                EE:C5:F7:52:85:5E:44:42:AC:C0:60:DC:98:D2:3B:00:
+                                CC:B6:7F:AE:95:5D:D5:92
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Oct 30 11:20:08.120 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:C4:3B:50:4B:BE:37:88:9D:6F:B4:E6:
+                                01:40:B4:8E:5C:A2:24:D9:98:BD:FB:DA:C6:E2:50:45:
+                                5C:AA:DC:BE:67:02:20:17:64:54:ED:7B:27:D2:D9:2F:
+                                CD:C6:25:45:23:FA:CE:23:02:70:5A:54:FF:EB:EE:E0:
+                                45:85:DD:EF:47:15:FB
+    Signature Algorithm: sha256WithRSAEncryption
+         7e:8d:d4:d0:37:3c:e9:71:96:12:71:3f:c9:cb:b9:58:77:3b:
+         46:6d:88:fd:02:61:45:f1:bb:28:3f:1b:ac:04:a5:5a:82:b9:
+         71:43:33:a7:be:b6:35:aa:ab:a9:df:f8:95:48:9e:29:81:cc:
+         ee:a4:57:1a:70:10:02:7d:05:83:9a:47:e3:fd:73:00:1d:7c:
+         b0:85:cb:51:65:d6:e3:43:b8:30:9e:0b:46:ed:27:5b:28:66:
+         e4:a6:e4:3d:94:f7:3d:47:4d:2c:94:e4:45:1c:27:0f:86:0c:
+         1a:02:74:37:e2:43:3a:c1:ae:07:8c:1c:8b:6b:57:95:fe:70:
+         09:39:da:40:69:ce:e9:09:07:36:4c:98:18:b0:6b:d1:c7:8a:
+         20:7f:a4:a6:74:81:d2:f7:55:18:3d:4a:d1:2d:89:09:ca:6f:
+         b8:a2:55:e5:74:24:05:3a:7c:58:58:87:20:11:2f:7a:fa:61:
+         3a:64:4b:af:22:15:33:e4:6c:e3:51:51:5e:16:e2:2a:43:e1:
+         01:47:f6:81:a1:e1:1c:54:48:91:50:fe:29:eb:9e:a8:f3:bb:
+         11:6d:1b:3f:a7:a4:ae:07:8c:4f:8d:d3:ba:86:b0:4f:80:b9:
+         2a:35:7d:52:de:ef:33:0c:5e:a9:57:01:bd:ae:85:96:da:88:
+         1e:0a:71:56
+</pre>
+</div><a name="8880"></a>
+<h6 id="8880" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=hash%3A-1104077008">-1104077008</a> | 2021-12-11T11:17:29.193069
+        </pre><span><strong>8880</strong> /
+tcp</span>
+<a href="http://35.192.142.147:8880" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<pre>HTTP/1.1 303 See Other
+Server: sw-cp-server
+Date: Sat, 11 Dec 2021 11:17:29 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Expires: Fri, 28 May 1999 00:00:00 GMT
+Last-Modified: Sat, 11 Dec 2021 11:17:29 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Cache-Control: post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP=&#34;NON COR CURa ADMa OUR NOR UNI COM NAV STA&#34;
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Location: http://35.192.142.147/login.php?success_redirect_url=%2F
+
+0
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<br />
+<div class="container u-full-width bg-solid"><br /><br />
+<div class="container">
+<div class="row">
+<div class="three columns">
+<h6 class="grid-heading">Products</h6>
+<ul>
+<li><a href="https://monitor.shodan.io" class="light">Monitor</a>
+</li>
+<li><a href="https://beta.shodan.io" class="light">Search Engine</a>
+</li>
+<li><a href="https://developer.shodan.io" class="light">Developer API</a>
+</li>
+<li><a href="https://maps.shodan.io" class="light">Maps</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 style="visibility:hidden" class="grid-heading">&nbsp;</h6>
+<ul>
+<li><a href="https://enterprise.shodan.io" class="light">Bulk Data</a>
+</li>
+<li><a href="https://images.shodan.io" class="light">Images</a>
+</li>
+<li><a href="https://snippets.shodan.io" class="light">Snippets</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 class="grid-heading">Pricing</h6>
+<ul>
+<li><a href="https://www.shodan.io/store/member" class="light">Membership</a>
+</li>
+<li><a href="https://developer.shodan.io/pricing" class="light">API Subscriptions</a>
+</li>
+<li><a href="https://enterprise.shodan.io" class="light">Enterprise</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 class="grid-heading">Contact Us</h6>
+<ul>
+<li><a href="mailto:support@shodan.io" class="light">support@shodan.io</a>
+</li>
+<li>
+<h5><a href="https://twitter.com/shodanhq" aria-label="Twitter" class="text-secondary"><i class="fab fa-twitter   "></i></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/company/shodan" aria-label="Linkedin" class="text-secondary"><i class="fab fa-linkedin   "></i></a>&nbsp;&nbsp;<a href="https://www.facebook.com/shodan.io" aria-label="Facebook" class="text-secondary"><i class="fab fa-facebook   "></i></a>
+</h5>
+</li>
+</ul>
+<p class="light">Shodan &reg; - All rights reserved</p>
+</div>
+</div>
+</div>
+</div>
+<script src="/static/mapbox-gl-js/js/mapbox-gl.js"></script>
+<script>(function () {
+    mapboxgl.setRTLTextPlugin('/static/mapbox-gl-js/js/mapbox-gl-rtl-text.js')
+    let map = new mapboxgl.Map({
+        container: 'host-map',
+        style: 'https://maptiles.shodan.io/styles/hybrid/style.json',
+        center: [-95.86083, 41.26194],
+        zoom: 10,
+        interactive: false,
+    })
+})()
+</script>
+</body>
+</html>

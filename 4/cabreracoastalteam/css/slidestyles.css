@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,td,th {font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; color: #333333; -webkit-text-size-adjust:none;}
+body {background-color: #FFFFFF; margin-top: 0px; margin-bottom: 0px;}
+.style1 {font-size: 40px; color: #0080AF;}
+.style2 {font-size: 22px; color: #666666;}
+.style3 {font-size: 30px; color: #666666;}
+.style4 {font-size: 16px; font-weight: bold;}
+.spacing {line-height: 18px;}
+.lrgspacing {line-height: 22px;}
+.lrgspacing2 {line-height: 28px;}
+.style6 {line-height: 18px; font-size: 12px;}
+a:link {color: #46BAE6; text-decoration: none;}
+a:visited {text-decoration: none; color: #46BAE6;}
+a:hover {text-decoration: underline; color: #1A8EBB;}
+a:active {text-decoration: none; color: #46BAE6;}
+a.darklink:link {color: #333333; text-decoration: none;}
+a.darklink:visited {text-decoration: none; color: #333333;}
+a.darklink:hover {text-decoration: underline; color: #333333;}
+a.darklink:active {text-decoration: none; color: #333333;}
+a.whitelink:link {color: #FFFFFF; text-decoration: none;}
+a.whitelink:visited {text-decoration: none; color: #FFFFFF;}
+a.whitelink:hover {text-decoration: underline; color: #FFFFFF;}
+a.whitelink:active {text-decoration: none; color: #FFFFFF;}
+h1 {font-size: 34px;}
+h2 {font-size: 28px;}
+h3 {font-size: 22px;}
+.style7 {font-size: 12px}
+.style8 {font-size: 11px}
+.style10 {font-size: 18px}
+.style1234 {color: #D00; font-weight: bold; font-size: 40px;}
+.style11 {font-family:Georgia, "Times New Roman", Times, serif}{font-size:28
+px}  
+.style141 {
+	color: #D00;
+	font-size: 18px;
+	font-weight: bold;
+}
+#topnav
+{
+	
+	margin-left: -49px;
+    margin-top: -15px;
+	
+	
+}
+
+#topnav ul
+{ 
+	list-style-type:none;
+	background-image: url(images/blue.png);background-repeat:repeat;
+	border-radius: 5px 0 5px 5px;
+
+}
+
+#topnav li
+{ 
+	float:left; 
+	position:relative;
+	margin:0px;
+	height:30px;
+	padding-top:8px;
+	
+}
+
+#topnav li a
+{
+	color: #FFFFFF;
+	text-decoration: none; 
+	height: 20px;
+}
+
+#topnav li a:hover
+{
+	color: #000; 
+	text-decoration:none;
+
+}
+
+#topnav ul ul
+{
+	padding:0px;
+	display:none;
+	position:absolute;
+	top:25px;
+	width:210px; 
+	text-align:left;
+	z-index:9999;
+	padding-bottom:10px;
+}
+
+#topnav ul ul li 
+{
+	padding-bottom:2px;
+	padding-top:0px;
+	left:auto;
+	margin:0;
+	clear:left;
+	width:100%;
+	color:#E1F5FE;
+	height:20px;
+	
+}
+#topnav ul ul li a
+{
+color:#E1F5FE;
+font-weight:normal;
+}
+#topnav ul ul li a:hover
+{
+	color:#000;
+	 
+}
+#topnav ul ul li a,
+#topnav ul li.active li a,
+#topnav ul li:hover ul li a,
+#topnav ul li.hover ul li a 
+{
+
+	font-size:14px;
+	line-height:20px;
+	background:none;
+	padding-left: 14px; 
+	margin-left:10px;
+	background:url('images/right_arrow.png'); background-repeat: no-repeat; background-position: left center;
+	text-transform:none;
+	
+	
+}
+
+#topnav ul li:hover ul,
+#topnav ul li.hover ul 
+{   
+
+	display:block;  
+}

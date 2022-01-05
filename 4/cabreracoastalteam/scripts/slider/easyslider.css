@@ -1,0 +1,15 @@
+.homepage_carousel{width:100%;overflow-x:hidden;margin-top:-3px;}
+#heroMain{height:749px;position:relative;width:1200px;margin:0 auto;}
+#slider{z-index:1;}
+#slideshowContainer{margin:0 0 0 -382px;position:relative;text-align:left;width:2000px;background:#333;z-index:0;}
+#slideshowContent{position:relative;z-index:0;}
+#slider ul,#slider li,#slider2 ul,#slider2 li{margin:0;padding:0;list-style:none;}
+#slider2{margin-top:1em;}
+#slider li,#slider2 li{width:2000px;height:749px;overflow:hidden;}
+ol#controls{display:block;position:absolute;top:120px;right:167px;width:auto;height:30px;padding:0 0 0 5px;}
+ol#controls li{margin:8px 2px 0 2px;padding:0;float:left;list-style:none;width:14px;height:14px;}
+ol#controls li a{float:left;cursor:pointer;overflow:hidden;z-index:10000!important;text-indent:-10000px;text-decoration:none;background:url('../../images/slideshow-pagination-dots.png') no-repeat;width:14px;height:14px;}
+ol#controls li a:hover,ol#controls li.current a{background:url('../../images/slideshow-pagination-dots.png') 0 -20px no-repeat;}
+ol#controls li a:focus,#prevBtn a:focus,#nextBtn a:focus{outline:none;}
+.slideshowCard{width:960px;height:435px;position:relative;}
+.caption{width:2000px;height:auto;border-top:3px solid #FFFFFF;border-bottom:3px solid #FFFFFF;position:absolute;top:370px;padding:13px 0 10px 42px;margin:0 0 0 0px;background:url('../../images/slideshow-caption_bg.png') repeat;}

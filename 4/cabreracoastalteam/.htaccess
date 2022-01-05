@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.cabreracoastalteam\.com [NC]
+RewriteRule ^(.*)$ https://cabreracoastalteam.com/$1 [L,R=301]
+RewriteRule ^index\.php/?$ https://cabreracoastalteam.com [L,R=301,NC]
+RewriteRule ^index\.html/?$ https://cabreracoastalteam.com [L,R=301,NC]
+
+ErrorDocument 404 /404.php

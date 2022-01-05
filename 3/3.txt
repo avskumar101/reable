@@ -1,0 +1,47 @@
+***************************************************************************************************************************************************
+Ping Output:
+*************
+--------------------------------------------------------------------------------------------------------------------
+└─$ ping burlcobar.org
+--------------------------------------------------------------------------------------------------------------------
+PING burlcobar.org (35.192.142.147) 56(84) bytes of data.
+64 bytes from 147.142.192.35.bc.googleusercontent.com (35.192.142.147): icmp_seq=1 ttl=57 time=292 ms
+64 bytes from 147.142.192.35.bc.googleusercontent.com (35.192.142.147): icmp_seq=2 ttl=57 time=291 ms
+64 bytes from 147.142.192.35.bc.googleusercontent.com (35.192.142.147): icmp_seq=3 ttl=57 time=315 ms
+--------------------------------------------------------------------------------------------------------------------
+
+www.uisp.it/admin/index.php
+***************************************************************************************************************************************************
+Spyse Output:
+*************
+220 ProFTPD Server (ProFTPD) [35.192.142.147]
+234 AUTH TLS successful
+
+
+
+
+***************************************************************************************************************************************************
+Nikto Output:
+*************
+└─$ nikto -host burlcobar.org        
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          35.192.142.147
++ Target Hostname:    burlcobar.org
++ Target Port:        80
++ Start Time:         2021-12-30 11:25:12 (GMT-5)
+---------------------------------------------------------------------------
++ Server: Apache
++ Retrieved x-powered-by header: ARRAY(0x55ab7e9b85c0)
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ Cookie PHPSESSID created without the httponly flag
++ Root page / redirects to: https://burlcobar.org/
++ ERROR: Error limit (20) reached for host, giving up. Last error: opening stream: can't connect (timeout): Operation now in progress
++ Scan terminated:  20 error(s) and 5 item(s) reported on remote host
++ End Time:           2021-12-30 11:33:54 (GMT-5) (522 seconds)
+---------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s([^\s]+)\.php\s
+
+RewriteRule ^(.*)-([0-9]+)\.php$ $1.php?mpid=$2&spid=$3
+</IfModule>

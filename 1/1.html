@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>79.96.77.115</title>
+<meta charset="utf-8">
+<meta name="description" content="Search Engine for the Internet of Things">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://wire.shodan.io/v2.4.0/default/css/wire.css" rel="stylesheet" />
+<link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="/static/img/apple-touch-icon-192.png">
+<link rel="search" href="/static/opensearch.xml" type="application/opensearchdescription+xml" title="Shodan">
+<script defer src="https://kit.fontawesome.com/b7e79643d9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/static/mapbox-gl-js/css/mapbox-gl.css" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@shodanhq" />
+<meta name="twitter:creator" content="@achillean" />
+<meta name="twitter:title" content="79.96.77.115" />
+<meta name="twitter:description" content="Ports open: 80, 443" />
+<meta name="twitter:image" content="https://www.shodan.io/host/79.96.77.115/image" />
+<style>#host-map {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#host-title {
+    background-image: none !important;
+    display: inline-block;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 80px 0 0 0;
+    padding: 0 10px;
+}
+
+.host-header-link {
+    padding: 0px 6px;
+    vertical-align: bottom;
+    font-size: 1.5rem;
+    margin-left: 12px;
+}
+
+#ports {
+    margin-top: 10px;
+}
+
+#ports a {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 1.3rem;
+    height: 48px;
+    letter-spacing: 1px;
+    line-height: 48px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 48px;
+}
+
+.banner-title span {
+    font-size: 1.4rem;
+}
+
+.screenshot {
+    width: 100%;
+    margin-top: 10px;
+}
+</style>
+<style>#host ul,
+#host pre {
+    margin-bottom: 0;
+}
+
+#http-components img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#http-components li {
+    display: inline-block;
+}
+
+#vulnerabilities th {
+    vertical-align: top;
+}
+
+#tags {
+    margin: -5px 0 10px;
+}
+
+#tags h6 {
+    display: inline;
+    vertical-align: middle;
+}
+
+.banner pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+:target {
+    animation: flash ease-in 0.5s 1
+}
+
+@keyframes flash {
+    0% {
+        background-color: Yellow;
+        opacity: 1;
+    }
+    100% {}
+}
+</style>
+</head>
+<body>
+<div class="quickbar">
+<ul>
+<li><a href="https://www.shodan.io">Shodan</a>
+</li>
+<li><a href="https://maps.shodan.io">Maps</a>
+</li>
+<li><a href="https://images.shodan.io">Images</a>
+</li>
+<li><a href="https://monitor.shodan.io">Monitor</a>
+</li>
+<li><a href="https://developer.shodan.io">Developer</a>
+</li>
+<li><a href="https://www.shodan.io/about/products">More...</a>
+</li>
+</ul>
+</div>
+<div class="container u-full-width">
+<div class="row">
+<div class="twelve columns">
+<div id="host-map"></div>
+<style>.searchbox {
+    font-family: Arial;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media (max-width: 900px) {
+    .right-menu .menu-item-account {
+        display: none
+    }
+}
+</style>
+<div class="navbar">
+<input id="menu-btn" type="checkbox" class="menu-btn" />
+<label for="menu-btn" class="menu-icon"><span class="navicon"><i class="fa fa-bars  fa-fw "></i></span>
+</label><a href="/" class="title"><img src="/static/img/logo.png" alt="Shodan" width="112" height="32" /></a>
+<ul class="menu sub-menu">
+<li><a href="/explore"><i class="fas fa-globe  fa-fw "></i>Explore</a>
+</li>
+<li><a href="https://account.shodan.io/billing" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase  fa-fw "></i>Pricing
+<i style="font-size: 1.1rem" class="fa fa-external-link  fa-fw "></i></a>
+</li>
+</ul>
+<form action="/search" method="GET">
+<div class="searchbox">
+<div class="input-wrapper">
+<label for="search-query" value="Enter search query" class="visually-hidden"></label>
+<input type="text" name="query" placeholder="Search..." autofocus="autofocus" autocapitalize="none" id="search-query" />
+</div>
+<button type="submit" aria-label="Submit search querxy" data-balloon-disable="data-balloon-disable" class="button-red"><i class="fas fa-search  fa-fw "></i>
+</button>
+</div>
+</form>
+<ul class="menu main-menu right-menu">
+<li><a href="/dashboard" class="highlight-success">Login</a>
+</li>
+</ul>
+</div>
+<script>(function() {
+    let $menuBtn = document.getElementById('menu-btn')
+    document.body.addEventListener('click', function(e) {
+        // Only check when the menu is open
+        if (!$menuBtn.checked) {
+            return
+        }
+
+        let elm = e.target
+        let showMenu = false
+        while (elm) {
+            // Ignore duplicated event
+            if (elm.classList.contains('menu-icon')) {
+                return
+            }
+
+            // Toggle menu when clicking on the menu icon
+            if (elm.id == 'menu-btn') {
+                showMenu = true
+                break
+            }
+            elm = elm.parentElement
+        }
+
+        $menuBtn.checked = showMenu
+    })
+})()
+</script>
+<div>
+<h2 id="host-title" class="bg-dark heading">79.96.77.115</h2><a href="/host/79.96.77.115" class="host-header-link bg-light inline-block"><i class="far fa-browser  fa-fw "></i> Regular View</a><a href="/host/79.96.77.115/raw" class="host-header-link bg-light inline-block"><i class="far fa-terminal  fa-fw "></i> Raw Data</a><a href="/host/79.96.77.115/history" class="host-header-link bg-light inline-block"><i class="far fa-history  fa-fw "></i> History</a>
+</div>
+</div>
+</div>
+</div>
+<div id="host" class="container u-full-width card-padding">
+<div class="row">
+<div class="twelve columns">
+<div class="u-pull-right">
+<h6 style="display: inline" class="grid-heading"><span>Last Update: 2021-12-21</span>
+</h6>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="six columns">
+<div class="card card-yellow card-padding"><a name="general"></a>
+<h1 id="general"><i class="far fa-globe  fa-fw "></i><em>General</em>Information
+</h1>
+<table class="table u-full-width">
+<tr>
+<td>Hostnames</td>
+<td><strong>cloudserver070473.home.pl</strong>
+</td>
+</tr>
+<tr>
+<td>Domains</td>
+<td><a href="/domain/home.pl" class="button">home.pl</a>
+</td>
+</tr>
+<tr>
+<td>Country</td>
+<td><strong><a href="/search?query=country%3A%22PL%22" class="text-dark">Poland</a></strong>
+</td>
+</tr>
+<tr>
+<td>City</td>
+<td><strong><a href="/search?query=city%3A%22Warsaw%22" class="text-dark">Warsaw</a></strong>
+</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td><strong><a href="/search?query=org%3A%22home.pl+S.A.%22" class="text-dark">home.pl S.A.</a></strong>
+</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td><strong><a href="/search?query=isp%3A%22home.pl+S.A.%22" class="text-dark">home.pl S.A.</a></strong>
+</td>
+</tr>
+<tr>
+<td>ASN</td>
+<td><strong><a href="/search?query=asn%3A%22AS12824%22" class="text-dark">AS12824</a></strong>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="six columns">
+<div class="card card-light-blue card-padding">
+<h1><i class="far fa-sitemap  fa-fw "></i> Open<em>Ports</em>
+</h1>
+<div id="ports"><a href="#80" class="bg-primary">80</a><a href="#443" class="bg-primary">443</a>
+</div>
+</div><a name="80"></a>
+<h6 id="80" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=http.html_hash%3A1239869300">1239869300</a> | 2021-12-13T20:56:26.743693
+        </pre><span><strong>80</strong> /
+tcp</span>
+<a href="http://79.96.77.115:80" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>IdeaWebServer httpd</em><span class="text-secondary">4.0.0</span>
+</h1>
+<pre>HTTP/1.1 301 
+Date: Mon, 13 Dec 2021 20:56:26 GMT
+Content-Type: text/html
+Content-Length: 575
+Connection: keep-alive
+Location: https://www.dietapremium.pl
+Server: IdeaWebServer/4.0.0
+Status: 301
+
+</pre>
+</div><a name="443"></a>
+<h6 id="443" class="grid-heading">
+<pre class="u-pull-right text-secondary"><a href="/search?query=http.html_hash%3A1239869300">1239869300</a> | 2021-12-21T07:50:49.726634
+        </pre><span><strong>443</strong> /
+tcp</span>
+<a href="https://79.96.77.115:443" target="_blank" rel="noreferrer noopener" class="link"><i class="far fa-external-link  fa-fw "></i></a>
+</h6>
+<div class="card card-padding banner">
+<h1 class="banner-title"><em>IdeaWebServer httpd</em><span class="text-secondary">4.0.0</span>
+</h1>
+<pre>HTTP/1.1 301 
+Date: Tue, 21 Dec 2021 07:50:29 GMT
+Content-Type: text/html
+Content-Length: 575
+Connection: keep-alive
+Location: https://www.dietapremium.pl
+Server: IdeaWebServer/4.0.0
+Status: 301
+
+</pre><strong>SSL Certificate</strong>
+<pre>Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            32:25:63:1a:7c:05:13:d0:ab:9e:ed:0e:2a:a8:a4:ca
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=PL, O=home.pl S.A., CN=Certyfikat SSL
+        Validity
+            Not Before: Jul  2 08:53:25 2020 GMT
+            Not After : Jul  2 08:53:25 2022 GMT
+        Subject: CN=*.home.pl
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b0:ba:14:49:02:ac:ac:03:8f:01:99:6c:49:95:
+                    38:90:70:11:18:f2:fd:a2:f9:b3:f3:45:28:a2:ec:
+                    68:43:62:05:12:c6:9b:e9:19:c7:39:1f:78:8c:cb:
+                    17:9a:d9:bb:4a:03:9a:ff:14:53:63:41:98:2a:cd:
+                    bf:e0:36:c7:c1:6d:36:62:c4:22:40:7e:60:d5:10:
+                    76:f9:5c:32:2f:62:2c:18:9b:39:3c:81:e6:50:62:
+                    33:5d:68:97:4c:a5:98:6b:1a:a5:6c:d6:30:8b:be:
+                    fb:13:1f:93:9e:aa:36:2b:15:ca:48:07:e1:e1:c7:
+                    28:9b:00:b8:fa:a8:a5:a6:69:23:ac:87:55:ad:63:
+                    06:e5:e7:55:5b:ad:ef:b8:cd:96:be:11:bf:6a:c9:
+                    d0:e4:e8:f6:b8:f8:eb:be:81:a2:79:98:c0:68:88:
+                    3b:3f:4a:35:da:b5:a9:ff:66:9c:2e:20:13:80:a0:
+                    6c:a0:97:f6:d4:9f:ae:8c:c4:ff:73:2a:d5:32:d8:
+                    47:81:ad:94:d0:1f:77:d0:04:81:0d:5c:77:f7:a1:
+                    c1:0b:77:db:61:4c:35:d5:76:e3:b0:3e:58:56:31:
+                    11:4d:75:24:34:33:85:3b:4f:82:4f:58:a3:0f:ae:
+                    15:7c:28:0e:48:da:9d:0e:96:45:5d:64:b3:8c:77:
+                    80:95
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:http://crl.certum.pl/hsha2.crl
+
+            Authority Information Access: 
+                OCSP - URI:http://h.ocsp-certum.com
+                CA Issuers - URI:http://repository.certum.pl/hsha2.cer
+
+            X509v3 Authority Key Identifier: 
+                keyid:3D:91:B6:CC:11:7B:EB:E4:66:11:AC:D2:D2:07:CB:A9:A4:80:73:31
+
+            X509v3 Subject Key Identifier: 
+                1D:2B:60:67:D0:30:EF:D1:E1:9C:62:4A:8C:6C:8D:2E:67:88:4D:FC
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.2.616.1.113527.2.5.1.9.6.3
+                  CPS: https://www.certum.pl/CPS
+
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Subject Alternative Name: 
+                DNS:*.home.pl, DNS:home.pl
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 55:81:D4:C2:16:90:36:01:4A:EA:0B:9B:57:3C:53:F0:
+                                C0:E4:38:78:70:25:08:17:2F:A3:AA:1D:07:13:D3:0C
+                    Timestamp : Jul  2 08:53:26.123 2020 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:20:50:D2:F6:61:F0:38:B4:97:AE:B5:3B:02:
+                                1E:32:07:8E:ED:41:C8:34:95:04:62:C2:D8:72:B7:1C:
+                                B3:CD:49:61:02:21:00:D3:86:9F:A0:A8:9F:DC:BD:74:
+                                98:0E:86:C3:94:58:2B:5B:95:8A:2C:CD:D3:09:7C:37:
+                                3D:6D:81:A8:45:BC:E8
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 6F:53:76:AC:31:F0:31:19:D8:99:00:A4:51:15:FF:77:
+                                15:1C:11:D9:02:C1:00:29:06:8D:B2:08:9A:37:D9:13
+                    Timestamp : Jul  2 08:53:26.483 2020 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:44:02:20:6E:68:83:61:1D:14:7E:3E:BD:D1:BA:8C:
+                                1B:D4:26:76:5A:BC:B9:4D:4D:69:5C:4A:8E:30:B9:6E:
+                                A3:83:24:87:02:20:39:25:2D:D9:BC:0B:DA:62:BE:F4:
+                                5A:6C:BC:CA:B7:01:00:AB:54:F8:A6:7B:C7:42:B5:96:
+                                6F:19:F6:A9:F7:D6
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:
+                                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47
+                    Timestamp : Jul  2 08:53:26.552 2020 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:43:02:1F:1D:1D:9D:61:90:51:35:02:E1:D3:CF:1D:
+                                AE:58:C4:0F:3B:96:53:02:21:17:AC:52:93:BF:67:6B:
+                                65:A0:61:02:20:69:A5:71:28:18:CB:F1:4A:9C:02:08:
+                                97:0C:B2:BE:A4:A1:63:3C:76:2D:60:9E:BD:C2:AE:65:
+                                53:0E:6B:9F:09
+    Signature Algorithm: sha256WithRSAEncryption
+         26:c4:6a:9d:4e:85:03:21:aa:ba:b8:df:7a:01:9c:34:44:8a:
+         4b:5f:1e:54:8b:d4:ce:eb:d6:71:b0:d4:f6:e3:c1:7f:a9:a8:
+         45:63:57:75:a3:80:e3:e7:77:db:c8:8d:4d:fd:8c:26:35:48:
+         9f:df:cf:1e:4c:91:53:79:39:8c:8d:92:a3:31:29:5c:f1:47:
+         60:13:ab:33:e9:e7:0c:06:71:18:7a:9a:c3:a2:98:9d:2f:54:
+         d0:9f:27:c2:a4:0c:55:17:3b:0d:3e:77:ae:76:12:32:f5:b7:
+         c6:7f:e1:f6:ce:2b:5f:fa:03:dd:50:6c:4a:9d:d0:65:fd:16:
+         9a:cb:4e:ac:d2:01:fb:f4:fb:ca:1c:bc:4e:6d:d8:87:e2:a1:
+         8c:53:ee:e3:41:44:e9:3e:38:d5:ca:68:f2:d1:8b:d7:30:f1:
+         1c:96:b5:60:ff:50:d5:78:f9:1a:e1:a6:b2:3b:09:6a:80:7f:
+         11:2f:18:b7:ce:29:80:51:5e:fc:94:64:bf:dc:93:3a:55:5e:
+         5a:5e:22:ff:88:8f:a4:78:32:cb:65:1d:25:67:ce:18:8d:19:
+         78:3f:47:70:a8:2a:fb:ab:03:1b:38:88:5b:66:66:b0:5e:8e:
+         4c:c1:1c:0e:41:2e:bb:f4:b7:57:66:bf:3a:df:8d:f7:89:95:
+         a8:6c:d6:f0
+</pre>
+</div>
+</div>
+</div>
+</div>
+<br />
+<div class="container u-full-width bg-solid"><br /><br />
+<div class="container">
+<div class="row">
+<div class="three columns">
+<h6 class="grid-heading">Products</h6>
+<ul>
+<li><a href="https://monitor.shodan.io" class="light">Monitor</a>
+</li>
+<li><a href="https://beta.shodan.io" class="light">Search Engine</a>
+</li>
+<li><a href="https://developer.shodan.io" class="light">Developer API</a>
+</li>
+<li><a href="https://maps.shodan.io" class="light">Maps</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 style="visibility:hidden" class="grid-heading">&nbsp;</h6>
+<ul>
+<li><a href="https://enterprise.shodan.io" class="light">Bulk Data</a>
+</li>
+<li><a href="https://images.shodan.io" class="light">Images</a>
+</li>
+<li><a href="https://snippets.shodan.io" class="light">Snippets</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 class="grid-heading">Pricing</h6>
+<ul>
+<li><a href="https://www.shodan.io/store/member" class="light">Membership</a>
+</li>
+<li><a href="https://developer.shodan.io/pricing" class="light">API Subscriptions</a>
+</li>
+<li><a href="https://enterprise.shodan.io" class="light">Enterprise</a>
+</li>
+</ul>
+</div>
+<div class="three columns">
+<h6 class="grid-heading">Contact Us</h6>
+<ul>
+<li><a href="mailto:support@shodan.io" class="light">support@shodan.io</a>
+</li>
+<li>
+<h5><a href="https://twitter.com/shodanhq" aria-label="Twitter" class="text-secondary"><i class="fab fa-twitter   "></i></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/company/shodan" aria-label="Linkedin" class="text-secondary"><i class="fab fa-linkedin   "></i></a>&nbsp;&nbsp;<a href="https://www.facebook.com/shodan.io" aria-label="Facebook" class="text-secondary"><i class="fab fa-facebook   "></i></a>
+</h5>
+</li>
+</ul>
+<p class="light">Shodan &reg; - All rights reserved</p>
+</div>
+</div>
+</div>
+</div>
+<script src="/static/mapbox-gl-js/js/mapbox-gl.js"></script>
+<script>(function () {
+    mapboxgl.setRTLTextPlugin('/static/mapbox-gl-js/js/mapbox-gl-rtl-text.js')
+    let map = new mapboxgl.Map({
+        container: 'host-map',
+        style: 'https://maptiles.shodan.io/styles/hybrid/style.json',
+        center: [21.01178, 52.22977],
+        zoom: 10,
+        interactive: false,
+    })
+})()
+</script>
+</body>
+</html>
