@@ -6,7 +6,7 @@ git commit -m '1st check'
 git remote add origin https://github.com/avskumar101/EVO.git
 
 
-
+Single File Github 
 echo "# reable" >> README.md  &&
 git init &&
 git add README.md &&
@@ -28,6 +28,10 @@ git remote -v
 
 git add .
 git commit -m 'purinju pandren'
-git push -u origin main	// username and generated_auth_token entry
+git push -u origin main	
+// username and generated_auth_token entry
 git status
 
+
+
+Google Dorks work:

@@ -12,7 +12,47 @@ PING cabreracoastalteam.com (35.192.142.147) 56(84) bytes of data.
 
 
 ***************************************************************************************************************************************************
-Spyse Output:
+Cabrera coastal team :
 *************
 
+"Cabrera" have a group of sub companies
+where realestate and costal and more sub companies available.
+	same structure for user logins.
+
+tracked down to other sites/structure and on checking the pagesource info -> search with 'login' got login page as wlogin
+***************************************************************************************************************************************************
+From this site "https://cabreracompanies.com/" got Login page info
+***************************************************************************************************************************************************
+function openLogin()
+{
+	
+var myWindow = window.open("wlogin.php","Login","toolbar=no, location = no, scrollbars=no, addressbar=no, titlebar=no, toolbar=no, resizable=no, top=200, left=450,width=350,height=370");
+}
+***************************************************************************************************************************************************
+
+https://cabrerapm.com/
+
+
+https://cabreracoastalteam.com/wlogin.php#
+
+
+<td class="lightblue" align="center"><em>&copy; Cabrera Coastal Real Estate - 6203 New Jersey Avenue Wildwood Crest, NJ - Phone: (609) 729-0559 - All Rights Reserved. Web Site Designed By:&nbsp;<a class="lightbluelink" href="http://www.designsquare1.com" target="_blank">Square 1 Design</a> - <a class="lightbluelink" href="http://www.capemay.org" target="_blank">Cape May</a></em><a style="position: absolute; left: -4147px; width: 1px; height: 1px; overflow: hidden;" href="../anxiety/buy-xanax-no-prescription.php">buy xanax</a></td>
+
+
+https://cabreracoastalteam.com/team.php?id=
+
+***************************************************************************************************************************************************
+view-source:https://visitor.constantcontact.com/do?mse=001eE8BHR1k0dHDOQT5K1_9iRH1IAoZyJqbOSrAnKHbBLs%3D&t=001utmiYvv2RSw_y4x-DMOecA%3D%3D&lang=001FCSs65SMrsI%3D&reason=001y5KaVlBn7_Y%3D&auth=001QXcg86n4Xyw%3D&llr=4ueiokcab&p=oo
+***************************************************************************************************************************************************
+do?
+mse=001eE8BHR1k0dHDOQT5K1_9iRH1IAoZyJqbOSrAnKHbBLs%3D
+&t=001utmiYvv2RSw_y4x-DMOecA%3D%3D
+&lang=001FCSs65SMrsI%3D
+&reason=001y5KaVlBn7_Y%3D
+&auth=001QXcg86n4Xyw%3D
+&llr=4ueiokcab
+&p=oo
+
+
+https://visitor.constantcontact.com/manage/update/success?optoutAll=false&v=001p1-sY4T9L9OcPq4GUVuvyX5shtI7-aApqXNt80VuZaCxUAEtuj2wnK-fhCzBECZjKAwRFcn_fFAMhXFIBAaQkGaEkOTTnzDK
 
