@@ -1,4 +1,18 @@
 
 git config --global user.email "you@example.com"
+git add 2nd_Intern
+git commit -m '1st check'
+git remote add origin https://github.com/avskumar101/EVO.git
 
 
+
+echo "# reable" >> README.md  &&
+git init &&
+git add README.md &&
+git commit -m "first commit" &&
+git branch -M main &&
+git remote add origin https://github.com/avskumar101/reable.git &&
+git push -u origin main
+
+
+https://github.com/avskumar101/reable.git
