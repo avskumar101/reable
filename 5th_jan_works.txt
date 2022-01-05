@@ -1,5 +1,6 @@
 
 git config --global user.email "you@example.com"
+git config --global user.name "you@example.com"
 git add 2nd_Intern
 git commit -m '1st check'
 git remote add origin https://github.com/avskumar101/EVO.git
@@ -16,3 +17,17 @@ git push -u origin main
 
 
 https://github.com/avskumar101/reable.git
+
+move into the current directory that we want to upload into GitHub(Downloads/2nd_intern)
+*****************************************************************************************
+git config --global user.email "you@example.com"
+git config --global user.name "you@example.com"
+git init
+git remote add origin https://github.com/avskumar101/reable.git
+git remote -v
+
+git add .
+git commit -m 'purinju pandren'
+git push -u origin main	// username and generated_auth_token entry
+git status
+
